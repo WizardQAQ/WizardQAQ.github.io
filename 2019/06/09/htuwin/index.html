@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。 PowerShell的美化主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa Go">
+<meta name="keywords" content="Backup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何“优雅”地使用Windowns">
+<meta property="og:url" content="https://wizardqaq.github.io/2019/06/09/htuwin/index.html">
+<meta property="og:site_name" content="Glenn&#39;s Blog">
+<meta property="og:description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。 PowerShell的美化主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa Go">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wizardqaq.github.io/2019/06/09/htuwin/Fig1.png">
+<meta property="og:image" content="https://wizardqaq.github.io/2019/06/09/htuwin/Fig2.png">
+<meta property="og:updated_time" content="2019-07-07T03:00:51.724Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何“优雅”地使用Windowns">
+<meta name="twitter:description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。 PowerShell的美化主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa Go">
+<meta name="twitter:image" content="https://wizardqaq.github.io/2019/06/09/htuwin/Fig1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://wizardqaq.github.io/2019/06/09/htuwin/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>如何“优雅”地使用Windowns | Glenn's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Glenn's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">The life style of my own</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/06/09/htuwin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gl L">
+      <meta itemprop="description" content="随波逐流，放弃自己">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Glenn's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何“优雅”地使用Windowns
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-09 16:43:13" itemprop="dateCreated datePublished" datetime="2019-06-09T16:43:13+08:00">2019-06-09</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-07 11:00:51" itemprop="dateModified" datetime="2019-07-07T11:00:51+08:00">2019-07-07</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。</p>
+<h2 id="PowerShell的美化"><a href="#PowerShell的美化" class="headerlink" title="PowerShell的美化"></a>PowerShell的美化</h2><p>主要用到的有，各个模块主要由PS Gallery进行：</p>
+<ul>
+<li>posh-git</li>
+<li>oh-my-posh</li>
+<li>PSReadLine</li>
+<li>PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂)</li>
+<li>PowerLine Font：Sarasa Gothic(or: dejavu sans mono nerd font)</li>
+<li>ColorTool (<a href="https://github.com/microsoft/terminal/releases" target="_blank" rel="noopener">release</a> 界面，添加到环境变量)<a id="more"></a>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="built_in">new-object</span> Net.WebClient).DownloadString(<span class="string">"http://psget.net/GetPsGet.ps1"</span>) | iex <span class="comment">#PS Get</span></span><br><span class="line"><span class="built_in">Get-ExecutionPolicy</span> -List</span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned -Scope CurrentUser</span><br><span class="line"><span class="built_in">Get-ExecutionPolicy</span> -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> posh-git -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> oh-my-posh -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> -Name PSReadLine -AllowPrerelease -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> -Name PSColors -Scope CurrentUser</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>首先在Power Shell的快捷方式目标后加上运行参数 <code>-NoLogo</code>来禁止每次打开时的版权声明，然后到 <code>C:\Users\\*\Documents\WindowsPowerShell</code> 下修改配置文件导入模块声明主题。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Import-Module</span> PSColor</span><br><span class="line"><span class="built_in">Import-Module</span> posh-git</span><br><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Honukai</span><br></pre></td></tr></table></figure>
+
+<p>最终配置好截图如下<br><img src="Fig1.png" alt="Fig1"></p>
+<h2 id="WSL的配置"><a href="#WSL的配置" class="headerlink" title="WSL的配置"></a>WSL的配置</h2><h3 id="WSL的安装"><a href="#WSL的安装" class="headerlink" title="WSL的安装"></a>WSL的安装</h3><p>好像因为用的是教育版Win10，没有Windows商店，没办法直接点点/(ㄒoㄒ)/~~，只能用手动了。首先下载Ubuntu 18.04的<a href="https://aka.ms/wsl-ubuntu-1804" target="_blank" rel="noopener">映像</a>。然后在Downloads文件夹执行以下命令，然后就可以在开始菜单找到Ubuntu App了，点击进行部署。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Add-AppxPackage CanonicalGroupLimited.Ubuntu18.<span class="number">04</span>onWindows_1804.<span class="number">2018.817</span>.<span class="number">0</span>_x64__79rhkp1fndgsc.Appx</span><br></pre></td></tr></table></figure>
+
+<h3 id="Ubuntu-配置"><a href="#Ubuntu-配置" class="headerlink" title="Ubuntu 配置"></a>Ubuntu 配置</h3><p>没什么好备份的，就是设置账号密码，配置hexo和anaconda环境</p>
+<h3 id="ZSH-配置"><a href="#ZSH-配置" class="headerlink" title="ZSH 配置"></a>ZSH 配置</h3><p>用上就会爱上o(<em>////▽////</em>)。主要有：</p>
+<ul>
+<li>ZSH</li>
+<li>Oh-My-ZSH<ul>
+<li>zsh-syntax-highlighting</li>
+<li>zsh-autosuggestions</li>
+<li>cp</li>
+<li>extract</li>
+<li>web-search</li>
+<li>colored-man-pages</li>
+<li>autojump</li>
+</ul>
+</li>
+<li>tldr</li>
+</ul>
+<p>.zshrc文件内容如下：</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ZSH=<span class="string">"/home/gll/.oh-my-zsh"</span></span><br><span class="line">ZSH_THEME=<span class="string">"ys"</span></span><br><span class="line"></span><br><span class="line">plugins=(git</span><br><span class="line">         zsh-syntax-highlighting</span><br><span class="line">         zsh-autosuggestions</span><br><span class="line">         cp </span><br><span class="line">         extract</span><br><span class="line">         web-search</span><br><span class="line">         colored-man-pages</span><br><span class="line">         autojump</span><br><span class="line">        )</span><br><span class="line">. /usr/share/autojump/autojump.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> zshconfig=<span class="string">"mate ~/.zshrc"</span></span><br><span class="line"><span class="built_in">alias</span> ohmyzsh=<span class="string">"mate ~/.oh-my-zsh"</span></span><br><span class="line"><span class="built_in">alias</span> chrome=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> endnote=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/EndNote X9/EndNote.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> netease=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Netease/CloudMusic/cloudmusic.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> steam=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Steam/Steam.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> wechat=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Tencent/WeChat/WeChat.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> uplay=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Ubisoft/Ubisoft\ Game\ Launcher/Uplay.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> vsc=<span class="string">"/mnt/c/Program\ Files/Microsoft\ VS\ Code/Code.exe"</span></span><br><span class="line"><span class="built_in">alias</span> origin=<span class="string">"/mnt/c/Program\ Files/OriginLab/Origin2018/Origin95_64.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> tim=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Tencent/TIM/Bin/QQScLauncher.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> dls=<span class="string">"/mnt/c/Users/lgl96/Downloads"</span></span><br><span class="line"><span class="built_in">alias</span> pdf=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Adobe/Acrobat\ DC/Acrobat/Acrobat.exe &amp;"</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="Fig2.png" alt="Fig2"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Backup/" rel="tag"># Backup</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/02/Cooling-Curve-Processing/" rel="next" title="冷却曲线处理">
+                <i class="fa fa-chevron-left"></i> 冷却曲线处理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/07/99/" rel="prev" title="99">
+                99 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Gl L">
+            
+              <p class="site-author-name" itemprop="name">Gl L</p>
+              <div class="site-description motion-element" itemprop="description">随波逐流，放弃自己</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/WizardQAQ" title="GitHub &rarr; https://github.com/WizardQAQ" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:lgl9693@gmail.com" title="E-Mail &rarr; mailto:lgl9693@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://steamcommunity.com/id/lgl9693/" title="steam &rarr; https://steamcommunity.com/id/lgl9693/" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam-square"></i>steam</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.zhihu.com/people/lgl9693/activities" title="zhihu &rarr; https://www.zhihu.com/people/lgl9693/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-quora"></i>zhihu</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell的美化"><span class="nav-number">1.</span> <span class="nav-text">PowerShell的美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL的配置"><span class="nav-number">2.</span> <span class="nav-text">WSL的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WSL的安装"><span class="nav-number">2.1.</span> <span class="nav-text">WSL的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu-配置"><span class="nav-number">2.2.</span> <span class="nav-text">Ubuntu 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZSH-配置"><span class="nav-number">2.3.</span> <span class="nav-text">ZSH 配置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gl L</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a></div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+  <script>
+    
+      pbOptions = {};
+      
+        pbOptions.iconStyle = "box";
+      
+        pbOptions.boxForm = "horizontal";
+      
+        pbOptions.position = "bottomCenter";
+      
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+        flOptions.iconStyle = "box";
+      
+        flOptions.boxForm = "horizontal";
+      
+        flOptions.position = "middleRight";
+      
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
