@@ -109,20 +109,20 @@
 
 
 
-  <meta name="description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。 PowerShell的美化主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa Go">
+  <meta name="description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。  PowerShell的美化 主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa">
 <meta name="keywords" content="Backup">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何“优雅”地使用Windowns">
 <meta property="og:url" content="https://wizardqaq.github.io/2019/06/09/htuwin/index.html">
 <meta property="og:site_name" content="Glenn&#39;s Blog">
-<meta property="og:description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。 PowerShell的美化主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa Go">
+<meta property="og:description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。  PowerShell的美化 主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wizardqaq.github.io/2019/06/09/htuwin/Fig1.png">
 <meta property="og:image" content="https://wizardqaq.github.io/2019/06/09/htuwin/Fig2.png">
 <meta property="og:updated_time" content="2019-07-07T03:00:51.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何“优雅”地使用Windowns">
-<meta name="twitter:description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。 PowerShell的美化主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa Go">
+<meta name="twitter:description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。  PowerShell的美化 主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa">
 <meta name="twitter:image" content="https://wizardqaq.github.io/2019/06/09/htuwin/Fig1.png">
 
 
@@ -414,30 +414,34 @@
 
       
         <p>主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。</p>
-<h2 id="PowerShell的美化"><a href="#PowerShell的美化" class="headerlink" title="PowerShell的美化"></a>PowerShell的美化</h2><p>主要用到的有，各个模块主要由PS Gallery进行：</p>
+<h2 id="powershell的美化"><a class="markdownIt-Anchor" href="#powershell的美化"></a> PowerShell的美化</h2>
+<p>主要用到的有，各个模块主要由PS Gallery进行：</p>
 <ul>
 <li>posh-git</li>
 <li>oh-my-posh</li>
 <li>PSReadLine</li>
 <li>PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂)</li>
 <li>PowerLine Font：Sarasa Gothic(or: dejavu sans mono nerd font)</li>
-<li>ColorTool (<a href="https://github.com/microsoft/terminal/releases" target="_blank" rel="noopener">release</a> 界面，添加到环境变量)<a id="more"></a>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="built_in">new-object</span> Net.WebClient).DownloadString(<span class="string">"http://psget.net/GetPsGet.ps1"</span>) | iex <span class="comment">#PS Get</span></span><br><span class="line"><span class="built_in">Get-ExecutionPolicy</span> -List</span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned -Scope CurrentUser</span><br><span class="line"><span class="built_in">Get-ExecutionPolicy</span> -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> posh-git -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> oh-my-posh -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> -Name PSReadLine -AllowPrerelease -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> -Name PSColors -Scope CurrentUser</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>ColorTool (<a href="https://github.com/microsoft/terminal/releases" target="_blank" rel="noopener">release</a> 界面，添加到环境变量)</li>
 </ul>
+<a id="more"></a>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="built_in">new-object</span> Net.WebClient).DownloadString(<span class="string">"http://psget.net/GetPsGet.ps1"</span>) | iex <span class="comment">#PS Get</span></span><br><span class="line"><span class="built_in">Get-ExecutionPolicy</span> -List</span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned -Scope CurrentUser</span><br><span class="line"><span class="built_in">Get-ExecutionPolicy</span> -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> posh-git -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> oh-my-posh -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> -Name PSReadLine -AllowPrerelease -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> -Name PSColors -Scope CurrentUser</span><br></pre></td></tr></table></figure>
 <p>首先在Power Shell的快捷方式目标后加上运行参数 <code>-NoLogo</code>来禁止每次打开时的版权声明，然后到 <code>C:\Users\\*\Documents\WindowsPowerShell</code> 下修改配置文件导入模块声明主题。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Import-Module</span> PSColor</span><br><span class="line"><span class="built_in">Import-Module</span> posh-git</span><br><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Honukai</span><br></pre></td></tr></table></figure>
-
-<p>最终配置好截图如下<br><img src="Fig1.png" alt="Fig1"></p>
-<h2 id="WSL的配置"><a href="#WSL的配置" class="headerlink" title="WSL的配置"></a>WSL的配置</h2><h3 id="WSL的安装"><a href="#WSL的安装" class="headerlink" title="WSL的安装"></a>WSL的安装</h3><p>好像因为用的是教育版Win10，没有Windows商店，没办法直接点点/(ㄒoㄒ)/~~，只能用手动了。首先下载Ubuntu 18.04的<a href="https://aka.ms/wsl-ubuntu-1804" target="_blank" rel="noopener">映像</a>。然后在Downloads文件夹执行以下命令，然后就可以在开始菜单找到Ubuntu App了，点击进行部署。</p>
+<p>最终配置好截图如下<br>
+<img src="Fig1.png" alt="Fig1"></p>
+<h2 id="wsl的配置"><a class="markdownIt-Anchor" href="#wsl的配置"></a> WSL的配置</h2>
+<h3 id="wsl的安装"><a class="markdownIt-Anchor" href="#wsl的安装"></a> WSL的安装</h3>
+<p>好像因为用的是教育版Win10，没有Windows商店，没办法直接点点/(ㄒoㄒ)/~~，只能用手动了。首先下载Ubuntu 18.04的<a href="https://aka.ms/wsl-ubuntu-1804" target="_blank" rel="noopener">映像</a>。然后在Downloads文件夹执行以下命令，然后就可以在开始菜单找到Ubuntu App了，点击进行部署。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Add-AppxPackage CanonicalGroupLimited.Ubuntu18.<span class="number">04</span>onWindows_1804.<span class="number">2018.817</span>.<span class="number">0</span>_x64__79rhkp1fndgsc.Appx</span><br></pre></td></tr></table></figure>
-
-<h3 id="Ubuntu-配置"><a href="#Ubuntu-配置" class="headerlink" title="Ubuntu 配置"></a>Ubuntu 配置</h3><p>没什么好备份的，就是设置账号密码，配置hexo和anaconda环境</p>
-<h3 id="ZSH-配置"><a href="#ZSH-配置" class="headerlink" title="ZSH 配置"></a>ZSH 配置</h3><p>用上就会爱上o(<em>////▽////</em>)。主要有：</p>
+<h3 id="ubuntu-配置"><a class="markdownIt-Anchor" href="#ubuntu-配置"></a> Ubuntu 配置</h3>
+<p>没什么好备份的，就是设置账号密码，配置hexo和anaconda环境</p>
+<h3 id="zsh-配置"><a class="markdownIt-Anchor" href="#zsh-配置"></a> ZSH 配置</h3>
+<p>用上就会爱上o(<em>////▽////</em>)。主要有：</p>
 <ul>
 <li>ZSH</li>
-<li>Oh-My-ZSH<ul>
+<li>Oh-My-ZSH
+<ul>
 <li>zsh-syntax-highlighting</li>
 <li>zsh-autosuggestions</li>
 <li>cp</li>
@@ -451,7 +455,6 @@
 </ul>
 <p>.zshrc文件内容如下：</p>
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ZSH=<span class="string">"/home/gll/.oh-my-zsh"</span></span><br><span class="line">ZSH_THEME=<span class="string">"ys"</span></span><br><span class="line"></span><br><span class="line">plugins=(git</span><br><span class="line">         zsh-syntax-highlighting</span><br><span class="line">         zsh-autosuggestions</span><br><span class="line">         cp </span><br><span class="line">         extract</span><br><span class="line">         web-search</span><br><span class="line">         colored-man-pages</span><br><span class="line">         autojump</span><br><span class="line">        )</span><br><span class="line">. /usr/share/autojump/autojump.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> zshconfig=<span class="string">"mate ~/.zshrc"</span></span><br><span class="line"><span class="built_in">alias</span> ohmyzsh=<span class="string">"mate ~/.oh-my-zsh"</span></span><br><span class="line"><span class="built_in">alias</span> chrome=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> endnote=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/EndNote X9/EndNote.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> netease=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Netease/CloudMusic/cloudmusic.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> steam=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Steam/Steam.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> wechat=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Tencent/WeChat/WeChat.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> uplay=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Ubisoft/Ubisoft\ Game\ Launcher/Uplay.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> vsc=<span class="string">"/mnt/c/Program\ Files/Microsoft\ VS\ Code/Code.exe"</span></span><br><span class="line"><span class="built_in">alias</span> origin=<span class="string">"/mnt/c/Program\ Files/OriginLab/Origin2018/Origin95_64.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> tim=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Tencent/TIM/Bin/QQScLauncher.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> dls=<span class="string">"/mnt/c/Users/lgl96/Downloads"</span></span><br><span class="line"><span class="built_in">alias</span> pdf=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Adobe/Acrobat\ DC/Acrobat/Acrobat.exe &amp;"</span></span><br></pre></td></tr></table></figure>
-
 <p><img src="Fig2.png" alt="Fig2"></p>
 
       
@@ -709,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell的美化"><span class="nav-number">1.</span> <span class="nav-text">PowerShell的美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL的配置"><span class="nav-number">2.</span> <span class="nav-text">WSL的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WSL的安装"><span class="nav-number">2.1.</span> <span class="nav-text">WSL的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu-配置"><span class="nav-number">2.2.</span> <span class="nav-text">Ubuntu 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZSH-配置"><span class="nav-number">2.3.</span> <span class="nav-text">ZSH 配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#powershell的美化"><span class="nav-number">1.</span> <span class="nav-text"> PowerShell的美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wsl的配置"><span class="nav-number">2.</span> <span class="nav-text"> WSL的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wsl的安装"><span class="nav-number">2.1.</span> <span class="nav-text"> WSL的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu-配置"><span class="nav-number">2.2.</span> <span class="nav-text"> Ubuntu 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh-配置"><span class="nav-number">2.3.</span> <span class="nav-text"> ZSH 配置</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -981,6 +984,44 @@
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      const selection = document.getSelection();
+      const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+      if (selected) {
+        selection.removeAllRanges();
+        selection.addRange(selected);
+      }
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
 
   
 

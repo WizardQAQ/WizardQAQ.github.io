@@ -109,19 +109,19 @@
 
 
 
-  <meta name="description" content="计划使用Python绘制XRD图，避免一遍又一遍的绘制改图的参数。但是（总有个但是）发现整体实现下来颇为复杂つ﹏⊂ demo代码见下，绘出的图见下（完全以一个门外汉的思维写代码。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657impor">
+  <meta name="description" content="计划使用Python绘制XRD图，避免一遍又一遍的绘制改图的参数。但是（总有个但是）发现整体实现下来颇为复杂つ﹏⊂ demo代码见下，绘出的图见下（完全以一个门外汉的思维写代码*。* 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657imp">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Python绘制XRD数据图(demo)">
 <meta property="og:url" content="https://wizardqaq.github.io/2019/04/10/xrd/index.html">
 <meta property="og:site_name" content="Glenn&#39;s Blog">
-<meta property="og:description" content="计划使用Python绘制XRD图，避免一遍又一遍的绘制改图的参数。但是（总有个但是）发现整体实现下来颇为复杂つ﹏⊂ demo代码见下，绘出的图见下（完全以一个门外汉的思维写代码。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657impor">
+<meta property="og:description" content="计划使用Python绘制XRD图，避免一遍又一遍的绘制改图的参数。但是（总有个但是）发现整体实现下来颇为复杂つ﹏⊂ demo代码见下，绘出的图见下（完全以一个门外汉的思维写代码*。* 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657imp">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wizardqaq.github.io/2019/04/10/xrd/Figure_1.png">
 <meta property="og:updated_time" content="2019-07-07T03:00:51.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Python绘制XRD数据图(demo)">
-<meta name="twitter:description" content="计划使用Python绘制XRD图，避免一遍又一遍的绘制改图的参数。但是（总有个但是）发现整体实现下来颇为复杂つ﹏⊂ demo代码见下，绘出的图见下（完全以一个门外汉的思维写代码。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657impor">
+<meta name="twitter:description" content="计划使用Python绘制XRD图，避免一遍又一遍的绘制改图的参数。但是（总有个但是）发现整体实现下来颇为复杂つ﹏⊂ demo代码见下，绘出的图见下（完全以一个门外汉的思维写代码*。* 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657imp">
 <meta name="twitter:image" content="https://wizardqaq.github.io/2019/04/10/xrd/Figure_1.png">
 
 
@@ -413,9 +413,8 @@
 
       
         <p>计划使用Python绘制XRD图，避免一遍又一遍的绘制改图的参数。但是（总有个但是）发现整体实现下来颇为复杂つ﹏⊂</p>
-<p>demo代码见下，绘出的图见下（完全以一个门外汉的思维写代码<em>。</em></p>
+<p>demo代码见下，绘出的图见下（完全以一个门外汉的思维写代码*。*</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> scipy.signal <span class="keyword">import</span> savgol_filter</span><br><span class="line"></span><br><span class="line">a = numpy.loadtxt(<span class="string">'1.txt'</span>)</span><br><span class="line">b = numpy.loadtxt(<span class="string">'2.txt'</span>)</span><br><span class="line">c = numpy.loadtxt(<span class="string">'3.txt'</span>)</span><br><span class="line">d = numpy.loadtxt(<span class="string">'4.txt'</span>)</span><br><span class="line">theta1 = a[:,<span class="number">0</span>]</span><br><span class="line">theta2 = b[:,<span class="number">0</span>]</span><br><span class="line">theta3 = c[:,<span class="number">0</span>]</span><br><span class="line">theta4 = d[:,<span class="number">0</span>]</span><br><span class="line">i1 = a[:,<span class="number">1</span>] + <span class="number">600</span></span><br><span class="line">i2 = b[:,<span class="number">1</span>] + <span class="number">400</span></span><br><span class="line">i3 = c[:,<span class="number">1</span>] + <span class="number">200</span></span><br><span class="line">i4 = d[:,<span class="number">1</span>]</span><br><span class="line">i1 = savgol_filter(i1, <span class="number">7</span>, <span class="number">3</span>) <span class="comment">#savgol——filter滤波</span></span><br><span class="line">i2 = savgol_filter(i2, <span class="number">7</span>, <span class="number">3</span>)</span><br><span class="line">i3 = savgol_filter(i3, <span class="number">7</span>, <span class="number">3</span>)</span><br><span class="line">i4 = savgol_filter(i4, <span class="number">7</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">#rc('axes', linewidth=2)#改变图框线宽</span></span><br><span class="line">plt.axis([<span class="number">20</span>, <span class="number">80</span>, <span class="number">-7</span>, <span class="number">3000</span>])</span><br><span class="line">plt.xlabel(<span class="string">"Theta"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">plt.ylabel(<span class="string">"I"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line"></span><br><span class="line">specific_spectrum_aluminum = numpy.array([<span class="number">38.472</span>, <span class="number">44.738</span>, <span class="number">65.133</span>, <span class="number">78.227</span>])</span><br><span class="line">peak_data_in_xrd = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_peak_near_data</span><span class="params">(degree_each, xrd_data=[])</span>:</span> <span class="comment">#寻峰</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    low_bdry = degree_each - <span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> xrd_data[j, <span class="number">0</span>] != low_bdry:</span><br><span class="line">        j = j + <span class="number">1</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    调试</span></span><br><span class="line"><span class="string">    else:</span></span><br><span class="line"><span class="string">        print(j)</span></span><br><span class="line"><span class="string">        print(data_1[j:j+200, 1])</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="keyword">return</span> max(xrd_data[j:j+<span class="number">200</span>, <span class="number">1</span>]) <span class="comment">#此处返回值为xrd数据上下一定范围的数据点为了后面找出峰。</span></span><br><span class="line">                                     <span class="comment">#200为4°（上下2°范围，然后除以步长0.02°得到的</span></span><br><span class="line"></span><br><span class="line">m = <span class="number">0</span> <span class="comment">#m为xrd数据所包含目标相的特征谱线根数（注意数组的起始为0）</span></span><br><span class="line"><span class="keyword">while</span> m &lt; <span class="number">4</span>:</span><br><span class="line">    lb = int(round(specific_spectrum_aluminum[m]))</span><br><span class="line">    peak_data_in_xrd.append(find_peak_near_data(lb, a) + <span class="number">600</span>)</span><br><span class="line">    m = m + <span class="number">1</span></span><br><span class="line">plt.scatter(specific_spectrum_aluminum, peak_data_in_xrd, marker=<span class="string">'*'</span>, label=<span class="string">'Al'</span>, s=<span class="number">100</span>)</span><br><span class="line">plt.legend(loc=<span class="string">'upper right'</span>, title = <span class="string">'Phases'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.plot(theta1,i1,linewidth=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#plt.plot(theta2,i2,linewidth=1)</span></span><br><span class="line">plt.plot(theta3,i3,linewidth=<span class="number">1</span>)</span><br><span class="line">plt.plot(theta4,i4,linewidth=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#plt.plot(theta1, a[:,1])</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <p><img src="Figure_1.png" alt="Output"></p>
 
       
@@ -919,6 +918,44 @@
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      const selection = document.getSelection();
+      const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+      if (selected) {
+        selection.removeAllRanges();
+        selection.addRange(selected);
+      }
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
 
   
 

@@ -109,18 +109,18 @@
 
 
 
-  <meta name="description" content="题目：输入一个数字，找出这个数字在内的所有素数 思路：首先根据Wiki，素数指  质数（Prime number），又称素数，指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个因数的数）  所以我们可以用试除法来判断一个数是不是素数，其中试除法就是指：对一个数N我们可以对它作取余运算，如果对从2到N-1所有余数都不为0（注：2不在这句包含范围内）那么">
+  <meta name="description" content="题目： 输入一个数字，找出这个数字在内的所有素数  思路： 首先根据Wiki，素数指  质数（Prime number），又称素数，指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个因数的数）  所以我们可以用试除法来判断一个数是不是素数，其中试除法就是指：对一个数N我们可以对它作取余运算，如果对从2到N-1所有余数都不为0（注：2不在这句包含范围">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="素数">
 <meta property="og:url" content="https://wizardqaq.github.io/2016/03/11/3/index.html">
 <meta property="og:site_name" content="Glenn&#39;s Blog">
-<meta property="og:description" content="题目：输入一个数字，找出这个数字在内的所有素数 思路：首先根据Wiki，素数指  质数（Prime number），又称素数，指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个因数的数）  所以我们可以用试除法来判断一个数是不是素数，其中试除法就是指：对一个数N我们可以对它作取余运算，如果对从2到N-1所有余数都不为0（注：2不在这句包含范围内）那么">
+<meta property="og:description" content="题目： 输入一个数字，找出这个数字在内的所有素数  思路： 首先根据Wiki，素数指  质数（Prime number），又称素数，指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个因数的数）  所以我们可以用试除法来判断一个数是不是素数，其中试除法就是指：对一个数N我们可以对它作取余运算，如果对从2到N-1所有余数都不为0（注：2不在这句包含范围">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-07-07T03:00:51.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="素数">
-<meta name="twitter:description" content="题目：输入一个数字，找出这个数字在内的所有素数 思路：首先根据Wiki，素数指  质数（Prime number），又称素数，指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个因数的数）  所以我们可以用试除法来判断一个数是不是素数，其中试除法就是指：对一个数N我们可以对它作取余运算，如果对从2到N-1所有余数都不为0（注：2不在这句包含范围内）那么">
+<meta name="twitter:description" content="题目： 输入一个数字，找出这个数字在内的所有素数  思路： 首先根据Wiki，素数指  质数（Prime number），又称素数，指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个因数的数）  所以我们可以用试除法来判断一个数是不是素数，其中试除法就是指：对一个数N我们可以对它作取余运算，如果对从2到N-1所有余数都不为0（注：2不在这句包含范围">
 
 
 
@@ -410,15 +410,26 @@
       
 
       
-        <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>输入一个数字，找出这个数字在内的所有素数</p>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>首先根据Wiki，<a href="https://zh.wikipedia.org/wiki/%E7%B4%A0%E6%95%B0" target="_blank" rel="noopener">素数</a>指</p>
+        <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目：</h1>
+<p>输入一个数字，找出这个数字在内的所有素数</p>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
+<p>首先根据Wiki，<a href="https://zh.wikipedia.org/wiki/%E7%B4%A0%E6%95%B0" target="_blank" rel="noopener">素数</a>指</p>
 <blockquote>
 <p>质数（Prime number），又称素数，指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个因数的数）</p>
 </blockquote>
-<p>所以我们可以用试除法来判断一个数是不是素数，其中试除法就是指：对一个数N我们可以对它作取余运算，如果对从2到N-1所有余数都不为0（注：2不在这句包含范围内）<br>那么它就是个素数。虽然这方法很无脑（TOT）但是在计算机的帮助下还是可以找出一些素数的，并且我们可以不必除到N-1，只需除到$\sqrt{N}$（这个其实我不会证明QAQ）。<br>这样我们就可以粗略地找一下一千以内的素数。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">su_shu</span><span class="params">(m)</span>:</span></span><br><span class="line">    n = int(round(math.sqrt(m)))</span><br><span class="line">    <span class="keyword">if</span> m == <span class="number">2</span>:</span><br><span class="line">        print(<span class="string">'2 is a prime number\n'</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> m % i:</span><br><span class="line">            <span class="keyword">if</span> i == n:</span><br><span class="line">                <span class="comment">#print(m,'is a prime number')</span></span><br><span class="line">                r = m</span><br><span class="line">                <span class="keyword">return</span> r</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment">#print(m,'is not a prime number')</span></span><br><span class="line">            r = <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> r</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">num = input()</span><br><span class="line">num = int(num)</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> res <span class="keyword">in</span> range(<span class="number">1</span>,num+<span class="number">1</span>):</span><br><span class="line">    result = su_shu(res)</span><br><span class="line">    <span class="keyword">if</span> result:</span><br><span class="line">        print(result,<span class="string">'is a prime number\n'</span>)</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment">#print('is not prime number)</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">print(<span class="string">'Less than'</span> ,num ,<span class="string">'there are'</span>,i , <span class="string">'prime numbers'</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结:"></a>小结:</h2><p>依然感觉写的很烂，感觉还可以写的更好更简单，漫漫长路（心塞</p>
+<p>所以我们可以用试除法来判断一个数是不是素数，其中试除法就是指：对一个数N我们可以对它作取余运算，如果对从2到N-1所有余数都不为0（注：2不在这句包含范围内）<br>
+那么它就是个素数。虽然这方法很无脑（TOT）但是在计算机的帮助下还是可以找出一些素数的，并且我们可以不必除到N-1，只需除到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.11333499999999996em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9266650000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span><span style="top:-2.886665em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width="400em" height="1.08em" viewbox="0 0 400000 1080" preserveaspectratio="xMinYMin slice"><path d="M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11333499999999996em;"><span></span></span></span></span></span></span></span></span>（这个其实我不会证明QAQ）。<br>
+这样我们就可以粗略地找一下一千以内的素数。</p>
+<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码:</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">su_shu</span><span class="params">(m)</span>:</span></span><br><span class="line">    n = int(round(math.sqrt(m)))</span><br><span class="line">    <span class="keyword">if</span> m == <span class="number">2</span>:</span><br><span class="line">        print(<span class="string">'2 is a prime number\n'</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> m % i:</span><br><span class="line">            <span class="keyword">if</span> i == n:</span><br><span class="line">                <span class="comment">#print(m,'is a prime number')</span></span><br><span class="line">                r = m</span><br><span class="line">                <span class="keyword">return</span> r</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment">#print(m,'is not a prime number')</span></span><br><span class="line">            r = <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> r</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">num = input()</span><br><span class="line">num = int(num)</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> res <span class="keyword">in</span> range(<span class="number">1</span>,num+<span class="number">1</span>):</span><br><span class="line">    result = su_shu(res)</span><br><span class="line">    <span class="keyword">if</span> result:</span><br><span class="line">        print(result,<span class="string">'is a prime number\n'</span>)</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment">#print('is not prime number)</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">print(<span class="string">'Less than'</span> ,num ,<span class="string">'there are'</span>,i , <span class="string">'prime numbers'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结:</h2>
+<p>依然感觉写的很烂，感觉还可以写的更好更简单，漫漫长路（心塞</p>
 
       
     </div>
@@ -675,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路："><span class="nav-number">1.1.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.2.</span> <span class="nav-text">代码:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text">小结:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text"> 题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">1.1.</span> <span class="nav-text"> 思路：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.2.</span> <span class="nav-text"> 代码:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text"> 小结:</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -947,6 +958,44 @@
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      const selection = document.getSelection();
+      const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+      if (selected) {
+        selection.removeAllRanges();
+        selection.addRange(selected);
+      }
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
 
   
 

@@ -109,18 +109,18 @@
 
 
 
-  <meta name="description" content="题目：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？ 代码：Python123456789101112131415161718192021month = 1rabbits = 2rabbits_one = 0rabbits_two = 0while  month &amp;lt; 100:    if month &amp;lt">
+  <meta name="description" content="题目： 有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？  代码： Python123456789101112131415161718192021month = 1rabbits = 2rabbits_one = 0rabbits_two = 0while  month &amp;lt; 100:    if month">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="兔子繁殖">
 <meta property="og:url" content="https://wizardqaq.github.io/2016/03/10/2/index.html">
 <meta property="og:site_name" content="Glenn&#39;s Blog">
-<meta property="og:description" content="题目：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？ 代码：Python123456789101112131415161718192021month = 1rabbits = 2rabbits_one = 0rabbits_two = 0while  month &amp;lt; 100:    if month &amp;lt">
+<meta property="og:description" content="题目： 有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？  代码： Python123456789101112131415161718192021month = 1rabbits = 2rabbits_one = 0rabbits_two = 0while  month &amp;lt; 100:    if month">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-07-07T03:00:51.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="兔子繁殖">
-<meta name="twitter:description" content="题目：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？ 代码：Python123456789101112131415161718192021month = 1rabbits = 2rabbits_one = 0rabbits_two = 0while  month &amp;lt; 100:    if month &amp;lt">
+<meta name="twitter:description" content="题目： 有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？  代码： Python123456789101112131415161718192021month = 1rabbits = 2rabbits_one = 0rabbits_two = 0while  month &amp;lt; 100:    if month">
 
 
 
@@ -410,10 +410,12 @@
       
 
       
-        <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight python"><figcaption><span>Python</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">month = <span class="number">1</span></span><br><span class="line">rabbits = <span class="number">2</span></span><br><span class="line">rabbits_one = <span class="number">0</span></span><br><span class="line">rabbits_two = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>  month &lt; <span class="number">100</span>:</span><br><span class="line">    <span class="keyword">if</span> month &lt; <span class="number">3</span>:</span><br><span class="line">        month += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        rabbits = rabbits + rabbits_two</span><br><span class="line">        rabbits_two = rabbits_one</span><br><span class="line">        rabbits_one =  rabbits</span><br><span class="line">        month += <span class="number">1</span></span><br><span class="line">        dict1 = &#123;&#125;</span><br><span class="line">        sum_rabbits = rabbits + rabbits_two + rabbits_one</span><br><span class="line">        pair_rabbits = int(sum_rabbits / <span class="number">2</span>)</span><br><span class="line">        dict1[<span class="string">'月份是'</span> , month<span class="number">-1</span>] = <span class="string">'兔子只数'</span> , sum_rabbits , <span class="string">'兔子对数是'</span>, pair_rabbits</span><br><span class="line">        print(dict1)</span><br><span class="line">        print(<span class="string">'兔子总数是'</span>,rabbits + rabbits_two + rabbits_one)</span><br><span class="line">print(<span class="string">'兔子对数是'</span>,int((rabbits + rabbits_two + rabbits_one)/<span class="number">2</span>))</span><br><span class="line">print(<span class="string">'结束时'</span>,month<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="小节："><a href="#小节：" class="headerlink" title="小节："></a>小节：</h2><p>感觉写得代码好糟糕，感觉好长，希望以后可以简化代码</p>
+        <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目：</h1>
+<p>有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？</p>
+<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h2>
+<figure class="highlight python"><figcaption><span>Python</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">month = <span class="number">1</span></span><br><span class="line">rabbits = <span class="number">2</span></span><br><span class="line">rabbits_one = <span class="number">0</span></span><br><span class="line">rabbits_two = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>  month &lt; <span class="number">100</span>:</span><br><span class="line">    <span class="keyword">if</span> month &lt; <span class="number">3</span>:</span><br><span class="line">        month += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        rabbits = rabbits + rabbits_two</span><br><span class="line">        rabbits_two = rabbits_one</span><br><span class="line">        rabbits_one =  rabbits</span><br><span class="line">        month += <span class="number">1</span></span><br><span class="line">        dict1 = &#123;&#125;</span><br><span class="line">        sum_rabbits = rabbits + rabbits_two + rabbits_one</span><br><span class="line">        pair_rabbits = int(sum_rabbits / <span class="number">2</span>)</span><br><span class="line">        dict1[<span class="string">'月份是'</span> , month<span class="number">-1</span>] = <span class="string">'兔子只数'</span> , sum_rabbits , <span class="string">'兔子对数是'</span>, pair_rabbits</span><br><span class="line">        print(dict1)</span><br><span class="line">        print(<span class="string">'兔子总数是'</span>,rabbits + rabbits_two + rabbits_one)</span><br><span class="line">print(<span class="string">'兔子对数是'</span>,int((rabbits + rabbits_two + rabbits_one)/<span class="number">2</span>))</span><br><span class="line">print(<span class="string">'结束时'</span>,month<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="小节"><a class="markdownIt-Anchor" href="#小节"></a> 小节：</h2>
+<p>感觉写得代码好糟糕，感觉好长，希望以后可以简化代码</p>
 
       
     </div>
@@ -670,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码："><span class="nav-number">1.1.</span> <span class="nav-text">代码：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小节："><span class="nav-number">1.2.</span> <span class="nav-text">小节：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text"> 题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text"> 代码：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小节"><span class="nav-number">1.2.</span> <span class="nav-text"> 小节：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -942,6 +944,44 @@
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      const selection = document.getSelection();
+      const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+      if (selected) {
+        selection.removeAllRanges();
+        selection.addRange(selected);
+      }
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
 
   
 
