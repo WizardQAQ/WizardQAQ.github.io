@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="不冷曲线 步冷曲线的获得为使用K型热电偶测量，实验条件为：  将试样加热至1000℃，采用5、10、20、50和自由冷却的方式冷却至室温 数据处理部分均以20℃/s的为例（其实是感觉只有这个的数据处理能看:(   数据处理 对曲线使用了最小二乘法，一阶差分，二阶差分(好像应该写导数)">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="冷却曲线处理">
+<meta property="og:url" content="https://wizardqaq.github.io/2019/06/02/Cooling-Curve-Processing/index.html">
+<meta property="og:site_name" content="Glenn&#39;s Blog">
+<meta property="og:description" content="不冷曲线 步冷曲线的获得为使用K型热电偶测量，实验条件为：  将试样加热至1000℃，采用5、10、20、50和自由冷却的方式冷却至室温 数据处理部分均以20℃/s的为例（其实是感觉只有这个的数据处理能看:(   数据处理 对曲线使用了最小二乘法，一阶差分，二阶差分(好像应该写导数)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wizardqaq.github.io/2019/06/02/Cooling-Curve-Processing/Figure_1.png">
+<meta property="og:image" content="https://wizardqaq.github.io/2019/06/02/Cooling-Curve-Processing/Figure_2.png">
+<meta property="og:image" content="https://wizardqaq.github.io/2019/06/02/Cooling-Curve-Processing/Figure_3.png">
+<meta property="og:updated_time" content="2019-08-09T14:44:50.144Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="冷却曲线处理">
+<meta name="twitter:description" content="不冷曲线 步冷曲线的获得为使用K型热电偶测量，实验条件为：  将试样加热至1000℃，采用5、10、20、50和自由冷却的方式冷却至室温 数据处理部分均以20℃/s的为例（其实是感觉只有这个的数据处理能看:(   数据处理 对曲线使用了最小二乘法，一阶差分，二阶差分(好像应该写导数)">
+<meta name="twitter:image" content="https://wizardqaq.github.io/2019/06/02/Cooling-Curve-Processing/Figure_1.png">
+  <link rel="canonical" href="https://wizardqaq.github.io/2019/06/02/Cooling-Curve-Processing/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>冷却曲线处理 | Glenn's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Glenn's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">The life style of my own</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    <div class="reading-progress-bar"></div>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/06/02/Cooling-Curve-Processing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gl L">
+      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Glenn's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">冷却曲线处理
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-02 18:41:37" itemprop="dateCreated datePublished" datetime="2019-06-02T18:41:37+08:00">2019-06-02</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-09 22:44:50" itemprop="dateModified" datetime="2019-08-09T22:44:50+08:00">2019-08-09</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="不冷曲线"><a class="markdownIt-Anchor" href="#不冷曲线"></a> 不冷曲线</h1>
+<p>步冷曲线的获得为使用K型热电偶测量，实验条件为：</p>
+<blockquote>
+<p>将试样加热至1000℃，采用5、10、20、50和自由冷却的方式冷却至室温<br>
+数据处理部分均以20℃/s的为例（其实是感觉只有这个的数据处理能看:(</p>
+</blockquote>
+<h2 id="数据处理"><a class="markdownIt-Anchor" href="#数据处理"></a> 数据处理</h2>
+<p>对曲线使用了最小二乘法，一阶差分，二阶差分(好像应该写导数)</p>
+<a id="more"></a>
+<h3 id="最小二乘法"><a class="markdownIt-Anchor" href="#最小二乘法"></a> 最小二乘法</h3>
+<p>对于整体曲线使用最小二乘法进行回归分析（好像没什么意义，找不出想要的线性部分）。代码见下，拟合结果见图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.optimize <span class="keyword">import</span> leastsq</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun1</span><span class="params">(x,p)</span>:</span></span><br><span class="line">    k,b = p</span><br><span class="line">    <span class="keyword">return</span> k * x + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">residuals</span><span class="params">(p, y, x)</span>:</span> </span><br><span class="line">    <span class="keyword">return</span> y - fun1(x, p)</span><br><span class="line"></span><br><span class="line">data = np.loadtxt(<span class="string">'CCT20.txt'</span>)</span><br><span class="line">y = data[:,<span class="number">1</span>]   <span class="comment">#Cgauge</span></span><br><span class="line">x = data[:,<span class="number">6</span>]   <span class="comment">#Temp</span></span><br><span class="line">p0 = [<span class="number">-1</span>,<span class="number">-1</span>]    <span class="comment">#给定初始值</span></span><br><span class="line">plsq = leastsq(residuals, p0, args=(data[:, <span class="number">1</span>], data[:, <span class="number">6</span>]))</span><br><span class="line">print(plsq[<span class="number">0</span>], plsq, sep=<span class="string">'\n'</span>)  <span class="comment">#最终最小二乘法求得的拟合曲线参数</span></span><br><span class="line"></span><br><span class="line">plt.plot(data[:,<span class="number">6</span>], data[:,<span class="number">1</span>])</span><br><span class="line">plt.plot(data[:,<span class="number">6</span>], fun1(data[:,<span class="number">6</span>], plsq[<span class="number">0</span>]))   <span class="comment">#拟合曲线和原始数据</span></span><br></pre></td></tr></table></figure>
+<p><img src="Figure_1.png" alt="LSQ"></p>
+<h3 id="一二阶导"><a class="markdownIt-Anchor" href="#一二阶导"></a> 一二阶导</h3>
+<p>对离散数据点求“导”，希望找到导数不变的部分即原始数据中的线性部分，以此来求出整个冷却过程的中相变点。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">data = np.loadtxt(<span class="string">'CCT20.txt'</span>)</span><br><span class="line">y = data[:,<span class="number">1</span>]   <span class="comment">#Cgauge</span></span><br><span class="line">x = data[:,<span class="number">6</span>]   <span class="comment">#Temp</span></span><br><span class="line"></span><br><span class="line">dy = np.zeros([<span class="number">4000</span>,<span class="number">2</span>], dtype = float)  <span class="comment">#给定初始数组用于储存差分y的数据（如此不负责任的给了4000:)</span></span><br><span class="line"></span><br><span class="line">i = <span class="number">0</span>   <span class="comment">#迭代变量</span></span><br><span class="line">interval = <span class="number">30</span>   <span class="comment">#这个间隔主要是跳过一些数据点，较少一些“噪声”。</span></span><br><span class="line">                <span class="comment">#对于5℃/s的冷速，获得数据点较多，可能由于自身传感器的噪声，原始数据还好，但求一阶导后整个数据波动十分巨大，</span></span><br><span class="line">                <span class="comment"># 甚至远超过自身所包含的信息，根据Google的方法，可以跳过一些数据点（这个多简单），或者滤波（我感觉，但是好麻烦）</span></span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="number">905</span> - interval:   <span class="comment">#905为数据总数量</span></span><br><span class="line">    dy[i,<span class="number">0</span>], dy[i,<span class="number">1</span>] = data[i,<span class="number">6</span>], (data[i+interval,<span class="number">1</span>] - data[i,<span class="number">1</span>])/(data[i+interval,<span class="number">6</span>] - data[i,<span class="number">6</span>]) <span class="comment">#一阶导数</span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">dy2 = np.zeros([<span class="number">4000</span>,<span class="number">2</span>], dtype = float) <span class="comment">#同理一阶，这个0数组为了储存一阶导数的导数</span></span><br><span class="line">k = <span class="number">0</span>   <span class="comment">#迭代变量</span></span><br><span class="line">interval2 = <span class="number">10</span>  <span class="comment">#同理</span></span><br><span class="line"><span class="keyword">while</span> k &lt; <span class="number">904</span> - interval:</span><br><span class="line">    dy2[k,<span class="number">0</span>], dy2[k,<span class="number">1</span>] = dy[k,<span class="number">0</span>], ((dy[k+interval2,<span class="number">1</span>] - dy[k,<span class="number">1</span>]) / (dy[k+interval2,<span class="number">0</span>] - dy[k,<span class="number">0</span>]))   <span class="comment">#二阶导数</span></span><br><span class="line">    k += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">fig, ax1 = plt.subplots()</span><br><span class="line">color = <span class="string">'tab:red'</span></span><br><span class="line">ax1.set_xlabel(<span class="string">'Temp'</span>)</span><br><span class="line">ax1.set_ylabel(<span class="string">'CGauge'</span>, color=color)</span><br><span class="line">ax1.plot(data[:,<span class="number">6</span>], data[:,<span class="number">1</span>], color=color, label=<span class="string">'Temp-CGauge'</span>)</span><br><span class="line">ax1.tick_params(axis=<span class="string">'y'</span>, labelcolor=color)</span><br><span class="line">ax2 = ax1.twinx() <span class="comment">#副y轴，考虑到Temp和导数的数据范围差别还是蛮大的所以又用了一根</span></span><br><span class="line">color = <span class="string">'tab:blue'</span></span><br><span class="line">ax2.set_ylabel(<span class="string">'D'</span>, color=color)  <span class="comment"># we already handled the x-label with ax1（抄别人代码的注释</span></span><br><span class="line">ax2.plot(dy2[:,<span class="number">0</span>], dy2[:,<span class="number">1</span>], color=color, label=<span class="string">'2nd D'</span>)</span><br><span class="line">color = <span class="string">'tab:green'</span></span><br><span class="line">ax1.plot(dy[:,<span class="number">0</span>], dy[:,<span class="number">1</span>], color=color, label=<span class="string">'1st D'</span>)</span><br><span class="line">ax2.plot([<span class="number">0</span>,<span class="number">1100</span>], [<span class="number">0</span>,<span class="number">0</span>], label=<span class="string">'Ref line'</span>)</span><br><span class="line">ax2.tick_params(axis=<span class="string">'y'</span>, labelcolor=color)</span><br><span class="line">ax2.set_ylim([<span class="number">-0.00008</span>,<span class="number">0.00008</span>])</span><br><span class="line">ax1.legend(loc=<span class="number">1</span>)</span><br><span class="line">ax2.legend(loc=<span class="number">2</span>)   <span class="comment">#图例的位置，这样两边放好难看，，，，</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="Figure_2.png" alt="ProcessingFig"></p>
+<p>通过图片可以明显看出在相变前，曲线的二阶导在0附近波动（感觉这地方还是处理下会好看点，但这样是不是就算某种程度上修改数据:(。</p>
+<h3 id="精进"><a class="markdownIt-Anchor" href="#精进"></a> 精进？</h3>
+<p>又改了下代码，把求导数的部分写成了一个函数，方便对不同组数据的使用。代码见下(另不改y轴范围，不对曲线进行处理，这数据能看？？？做啥研究，上哪门子学回家卖红薯把(╬▔皿▔)凸</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">original_data = [<span class="string">'CCT5.txt'</span>, <span class="string">'CCT10.txt'</span>, <span class="string">'CCT20.txt'</span>, <span class="string">'CCT50.txt'</span>, <span class="string">'CCTfree.txt'</span>]</span><br><span class="line">CCT5 = np.loadtxt(original_data[<span class="number">0</span>])</span><br><span class="line">CCT10 = np.loadtxt(original_data[<span class="number">1</span>])</span><br><span class="line">CCT20 = np.loadtxt(original_data[<span class="number">2</span>])</span><br><span class="line">CCT50 = np.loadtxt(original_data[<span class="number">3</span>])</span><br><span class="line">CCTfree = np.loadtxt(original_data[<span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">derivative</span><span class="params">(x, y, interval)</span>:</span></span><br><span class="line">    length_y = len(y)</span><br><span class="line">    dy = np.zeros([length_y, <span class="number">2</span>], dtype = float)</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    i_interval = interval</span><br><span class="line">    <span class="keyword">while</span> i &lt; length_y - i_interval:   </span><br><span class="line">        dy[i,<span class="number">0</span>], dy[i,<span class="number">1</span>] = x[i], (y[i+i_interval] - y[i])/(x[i+i_interval] - x[i])</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> dy</span><br><span class="line">dy_20 = derivative(CCT20[:,<span class="number">6</span>], CCT20[:,<span class="number">1</span>], <span class="number">20</span>)</span><br><span class="line">ddy_20 = derivative(dy_20[:,<span class="number">0</span>], dy_20[:,<span class="number">1</span>], <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.plot(ddy_20[:,<span class="number">0</span>], ddy_20[:,<span class="number">1</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="Figure_3.png" alt="Fig 3"></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Python/" rel="tag"># Python</a>
+            
+          </div>
+        
+
+        
+  <div class="post-widgets">
+    <div class="social-share">
+      
+      
+        <div id="needsharebutton-postbottom">
+          <span class="btn">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+          </span>
+        </div>
+      
+    </div>
+  
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/05/19/2019-5-19/" rel="next" title="读书摘录(May 19th, 2019)">
+                  <i class="fa fa-chevron-left"></i> 读书摘录(May 19th, 2019)
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/06/09/htuwin/" rel="prev" title="如何“优雅”地使用Windowns">
+                  如何“优雅”地使用Windowns <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="Gl L">
+  <p class="site-author-name" itemprop="name">Gl L</p>
+  <div class="site-description motion-element" itemprop="description">为天地立心，为生民立命，为往圣继绝学，为万世开太平</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/WizardQAQ" title="GitHub &rarr; https://github.com/WizardQAQ" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:lgl9693@gmail.com" title="E-Mail &rarr; mailto:lgl9693@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://steamcommunity.com/id/lgl9693/" title="steam &rarr; https://steamcommunity.com/id/lgl9693/" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam-square"></i>steam</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/lgl9693/activities" title="zhihu &rarr; https://www.zhihu.com/people/lgl9693/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-quora"></i>zhihu</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#不冷曲线"><span class="nav-number">1.</span> <span class="nav-text"> 不冷曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据处理"><span class="nav-number">1.1.</span> <span class="nav-text"> 数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 最小二乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一二阶导"><span class="nav-number">1.1.2.</span> <span class="nav-text"> 一二阶导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#精进"><span class="nav-number">1.1.3.</span> <span class="nav-text"> 精进？</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gl L</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a></div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+  
+  <div id="needsharebutton-float">
+    <span class="btn">
+      <i class="fa fa-share-alt" aria-hidden="true"></i>
+    </span>
+  </div>
+<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+<script>
+    pbOptions = {};
+      pbOptions.iconStyle = "box";
+    
+      pbOptions.boxForm = "horizontal";
+    
+      pbOptions.position = "bottomCenter";
+    
+      pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+    
+    new needShareButton('#needsharebutton-postbottom', pbOptions);
+    flOptions = {};
+      flOptions.iconStyle = "box";
+    
+      flOptions.boxForm = "horizontal";
+    
+      flOptions.position = "middleRight";
+    
+      flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+    
+    new needShareButton('#needsharebutton-float', flOptions);
+</script>
+
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>
