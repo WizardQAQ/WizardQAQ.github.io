@@ -67,7 +67,7 @@
 <meta property="og:description" content="突然发现原来鞍面使用两个二次函数复合而成，感觉很奇妙。 123456789101112import matplotlib.pyplot as plt import numpy as npfrom mpl_toolkits.mplot3d import Axes3Dfig = plt.figure()ax = Axes3D(fig)x = np.arange(-1,1,0.01)y = np.ara">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wizardqaq.github.io/2019/11/02/mpl-plot3d/Figure1.png">
-<meta property="og:updated_time" content="2019-11-02T13:06:13.567Z">
+<meta property="og:updated_time" content="2019-11-11T09:59:45.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Matplotlib绘制马鞍面">
 <meta name="twitter:description" content="突然发现原来鞍面使用两个二次函数复合而成，感觉很奇妙。 123456789101112import matplotlib.pyplot as plt import numpy as npfrom mpl_toolkits.mplot3d import Axes3Dfig = plt.figure()ax = Axes3D(fig)x = np.arange(-1,1,0.01)y = np.ara">
@@ -235,11 +235,19 @@
                 
               
 
-              <time title="创建时间：2019-11-02 20:56:44 / 修改时间：21:06:13" itemprop="dateCreated datePublished" datetime="2019-11-02T20:56:44+08:00">2019-11-02</time>
+              <time title="创建时间：2019-11-02 20:56:44" itemprop="dateCreated datePublished" datetime="2019-11-02T20:56:44+08:00">2019-11-02</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-11 17:59:45" itemprop="dateModified" datetime="2019-11-11T17:59:45+08:00">2019-11-11</time>
+              </span>
             
           
 
@@ -264,8 +272,9 @@
       
         <p>突然发现原来鞍面使用两个二次函数复合而成，感觉很奇妙。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = Axes3D(fig)</span><br><span class="line">x = np.arange(<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0.01</span>)</span><br><span class="line">y = np.arange(<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0.01</span>)</span><br><span class="line">X, Y = np.meshgrid(x, y) <span class="comment">#关键</span></span><br><span class="line">Z = X*X - Y*Y</span><br><span class="line">ax.plot_surface(X, Y, Z, rstride=<span class="number">1</span>, cstride=<span class="number">1</span>, cmap=plt.get_cmap(<span class="string">'viridis'</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="Figure1.png" alt="Figure"></p>
 <a id="more"></a>
+<p><img src="Figure1.png" alt="Figure"></p>
+
     </div>
 
     
@@ -313,6 +322,10 @@
 
             <div class="post-nav-prev post-nav-item">
               
+                <a href="/2019/11/11/MC-M/" rel="prev" title="MC计算PI---1">
+                  MC计算PI---1 <i class="fa fa-chevron-right"></i>
+                </a>
+              
             </div>
           </div>
         
@@ -359,7 +372,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

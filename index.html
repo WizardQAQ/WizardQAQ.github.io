@@ -198,6 +198,92 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/11/11/MC-M/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gl L">
+      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Glenn's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/11/11/MC-M/" class="post-title-link" itemprop="url">MC计算PI---1</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-11 17:53:54 / 修改时间：17:59:37" itemprop="dateCreated datePublished" datetime="2019-11-11T17:53:54+08:00">2019-11-11</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>曾经上计算材料学的课，发现其中有个用MC方法算PI的例子，感觉很有意思就拿Python实现了一下</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/11/11/MC-M/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/11/02/mpl-plot3d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -230,11 +316,19 @@
                 
               
 
-              <time title="创建时间：2019-11-02 20:56:44 / 修改时间：21:06:13" itemprop="dateCreated datePublished" datetime="2019-11-02T20:56:44+08:00">2019-11-02</time>
+              <time title="创建时间：2019-11-02 20:56:44" itemprop="dateCreated datePublished" datetime="2019-11-02T20:56:44+08:00">2019-11-02</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-11 17:59:45" itemprop="dateModified" datetime="2019-11-11T17:59:45+08:00">2019-11-11</time>
+              </span>
             
           
 
@@ -251,7 +345,6 @@
       
           <p>突然发现原来鞍面使用两个二次函数复合而成，感觉很奇妙。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = Axes3D(fig)</span><br><span class="line">x = np.arange(<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0.01</span>)</span><br><span class="line">y = np.arange(<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0.01</span>)</span><br><span class="line">X, Y = np.meshgrid(x, y) <span class="comment">#关键</span></span><br><span class="line">Z = X*X - Y*Y</span><br><span class="line">ax.plot_surface(X, Y, Z, rstride=<span class="number">1</span>, cstride=<span class="number">1</span>, cmap=plt.get_cmap(<span class="string">'viridis'</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="Figure1.png" alt="Figure"></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -919,7 +1012,7 @@ On the other hand, the term “nanocomposite” comprises multiphase materials, 
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+                <time title="修改时间：2019-11-11 17:59:50" itemprop="dateModified" datetime="2019-11-11T17:59:50+08:00">2019-11-11</time>
               </span>
             
           
@@ -935,8 +1028,7 @@ On the other hand, the term “nanocomposite” comprises multiphase materials, 
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <h2 id="挪威的森林-村上春树"><a class="markdownIt-Anchor" href="#挪威的森林-村上春树"></a> 挪威的森林 (村上春树)</h2>
+          <h2 id="挪威的森林-村上春树"><a class="markdownIt-Anchor" href="#挪威的森林-村上春树"></a> 挪威的森林 (村上春树)</h2>
 <blockquote>
 <p>一听这曲子，我就时常悲哀得不行。也不知为什么，我总是觉得似乎自己在茂密的森林中迷了路。”直子说，“一个人孤单单的，又冷，里面又黑，又没一个人出来救我。所以，只要我不点，她是不会弹这支曲</p>
 </blockquote>
@@ -944,147 +1036,15 @@ On the other hand, the term “nanocomposite” comprises multiphase materials, 
 <blockquote>
 <p>巴菲特说过，只有潮退之时，才能看出哪些人在裸泳。</p>
 </blockquote>
-<h2 id="知乎一小时-深度短时阅读第二季套装共九册-知乎一小时系列-知乎"><a class="markdownIt-Anchor" href="#知乎一小时-深度短时阅读第二季套装共九册-知乎一小时系列-知乎"></a> 知乎一小时 深度短时阅读（第二季）（套装共九册） (知乎「一小时」系列) (知乎)</h2>
-<blockquote>
-<p>我是圭多达莱佐，一个青年作曲家。 我 11 岁开始学习音乐，上个月我 30 岁了，还在学习音乐。2011 年是我学习音乐的第 14 个年头，这一年我来到了美国，开始了更加系统的音乐学习。五年硕士、博士音乐理论和作曲的训练，不仅使我的厨艺有了质的飞跃，也使我在四轮车驾驶领域积累了足够的经验，为博士毕业后投身出租车驾驶行业打下了坚实的基础。</p>
-</blockquote>
-<blockquote>
-<p>集古典之大成，开浪漫之先河。</p>
-</blockquote>
-<blockquote>
-<p>继续这种不以商业化和自由市场化为主导的音乐支持方式，是很难再推动音乐创作和演出向更高级和成熟的层次发展了。</p>
-</blockquote>
-<h2 id="看得见的正义经典再版法学入门必读书-陈瑞华"><a class="markdownIt-Anchor" href="#看得见的正义经典再版法学入门必读书-陈瑞华"></a> 看得见的正义（经典再版，法学入门必读书） (陈瑞华)</h2>
-<blockquote>
-<p>司法独立被视为司法权在现代宪政体制下所赖以存在的基石。孟德斯鸠曾就此警告如果司法权不与立法权和行政权分立，自由也就不存在了。如果司法权与立法权合而为一，则将是对公民的生命和自由施行专断的权力，因为法官就是立法者。如果司法权与行政权合而为一，法官便将握有压迫者的力量。（注：〔法〕孟德斯鸠：《论法的精神》（上册），张雁深译，商务印书馆1993年版，第156页。）</p>
-</blockquote>
-<p>好像美国禁止大法官公开发表意见</p>
-<blockquote>
-<p>与回避制度相似，变更管辖制度也应当以维护法院的公正审判为其设计目的。一般情况下，导致法院整体上无法做到公正审判的情况有以下几种：一是当地新闻媒体和社会舆论已经对某一案件的案情作出了大规模的报道和宣扬，使得当地法院的所有法官都面临压力、受到影响并形成了预断；二是案件已经由当地党、政、人大等官员发表过带有倾向性的裁判意见，甚至直接作出过批示或指示，致使任何法官都无法保持独立的审判；三是案件涉及法院院长、副院长甚至某一审判委员会委员的利益，或者这些人士与案件当事人存在特殊的社会关系，以至于该法院的任何法官审判案件也难以摆脱这种同事或上下级关系的影响；四是由于存在一些特殊的情况，使得该法院的所有法官都符合回避的条件和理由。</p>
-</blockquote>
-<blockquote>
-<p>庭审判并不确定，而当事人对此提出一些合理质疑的情况下，法律应当确立“先行回避”原则，以防止因为法官的公正审判资格受到质疑而导致其审判过程和裁判结论无法被普遍接受。</p>
-</blockquote>
-<blockquote>
-<p>法律应当确立“先行回避”原则，以防止因为法官的公正审判资格受到质疑而导致其审判过程和裁判结论无法被普遍接受。 在回避制度之外，变更管辖制度可以为裁判</p>
-</blockquote>
-<blockquote>
-<p>两项要求原本仅适用于法官的司法裁判活动，被用来作为法官解决纠纷时所要遵循的最低公正标准。但从20世纪初以来，它们逐渐发展成为法院监督行政权的重要程序保障，成为行政程序正当性的基本根据。</p>
-</blockquote>
-<blockquote>
-<p>为行政程序正当性的基本根据。根据上述第一项要求，法官在审判中不得存有任何偏私，而且</p>
-</blockquote>
-<h2 id="读客经典文库三体全集每个人的书架上都该有套三体关于宇宙的狂野想象套装共3册-刘慈欣"><a class="markdownIt-Anchor" href="#读客经典文库三体全集每个人的书架上都该有套三体关于宇宙的狂野想象套装共3册-刘慈欣"></a> 读客经典文库：三体全集（每个人的书架上都该有套《三体》！关于宇宙的狂野想象！）（套装共3册） (刘慈欣)</h2>
-<blockquote>
-<p>“但愿我没有犯错误。”毕云峰说，他可能想幽默一些，但无论程心还是其他人都没有这种感觉。</p>
-</blockquote>
-<blockquote>
-<p>黑暗森林威慑是悬在两个世界头上的达摩克利斯之剑，罗辑就是悬剑的发丝，他被称为执剑人。</p>
-</blockquote>
-<blockquote>
-<p>斯科特：怎么能这么做？！我们面对的是法律吗？你是法官吗？无罪推定原则呢？ 法官：对反人类罪不适用无罪推定原则，这一国际法准则在危机纪元就确立了，以确保人类的叛徒受到法律制裁。 斯科特：我们不是人类的叛徒！我们为地球而战时，你们在哪儿？！ 公诉人：你们是！两个世纪前的地球三体组织背叛人类的利益，今天的你们背叛人类最基本的道德准则。 斯科特：（沉默）</p>
-</blockquote>
-<blockquote>
-<p>对反人类罪不适用无罪推定原则，这一国际法准则在危机纪元就确立了，以确保人类的叛徒受到法律制裁。</p>
-</blockquote>
-<blockquote>
-<p>用半条命生活其实也没什么，据她观察，周围的人相当一部分都是生活在半条命之中，只要善于忘却和适应，半条命也可以活得很平静，甚至很幸福。</p>
-</blockquote>
-<blockquote>
-<p>现在人们知道，没有不散的宴席，一切都有个尽头。</p>
-</blockquote>
-<blockquote>
-<p>说：“现在，我将让自己的心脏停止跳动，与此同时我也将成为两个世界有史以来最大的罪犯。对于所犯下的罪行，我对两个文明表示深深的歉意，但不会忏悔，因为这是唯一的选择。我知道智子就在身边，但你们对人类的呼唤从不理睬，无言是最大的轻蔑，我们忍受这种轻蔑已经两个世纪了，现在，如果你们愿意，可以继续保持沉默，我只给你们三十秒钟时间。”</p>
-</blockquote>
-<blockquote>
-<p>两个世界有史以来最大的罪犯。对于所犯下的罪行，我对两个文明表示深深的歉意，但不会忏悔，因为这是唯一的选择。我知道智子就在身边，但你们对人类的呼唤从不理睬，无言是最</p>
-</blockquote>
-<blockquote>
-<p>说：“现在，我将让自己的心脏停止跳动，与此同时我也将成为两个世界有史以来最大的罪犯。对于所犯下的罪行，我对两个文明表示深深的歉意，但不会忏悔，因为这是唯一的选择。我知道智子就在身边，但你们对人类的呼唤从不理睬，无言是最大的轻蔑，我们忍受这种轻蔑已经两个世纪了，现在，如果你们愿意，可以继续保持沉默，我只给你们三十秒钟<br>
-它们都是为了忘却的纪念。</p>
-</blockquote>
-<blockquote>
-<p>一切。他本以为自己在两个多世纪的艰难历程中已经心硬如铁，但没有发现心灵最深处隐藏着的那些东西，在做出最后决断前他曾犹豫过，曾经努力抑制住心灵的颤抖，正是心中这最后的柔软杀了他，也杀了“自然选择”号上的所有人，在长达一个月的黑暗对峙中，他只比对方慢了几秒钟。</p>
-</blockquote>
-<blockquote>
-<p>两个多世纪前，阿瑟·克拉克在他的科幻小说《2001：太空奥德赛》中描述了一个外星超级文明留在月球上的黑色方碑，考察者用普通尺子量方碑的三道边，其长度比例是1∶3∶9，以后，不管用何种更精确的方式测量，穷尽了地球上测量技术的最高精度，方碑三边的比例仍是精确的1∶3∶9，没有任何误差。克拉克写道：那个文明以这种方式，狂妄地显示了自己的力量。</p>
-</blockquote>
-<blockquote>
-<p>我信奉歌德的说法：我爱你，与你有何相干？”</p>
-</blockquote>
-<blockquote>
-<p>东方，我来自一个坎坷的时代，是个现实的人，我只知道敌人还存在着，还在向太阳系逼近，作为军人，知道这一点，就只能后天下之乐而乐了……不要减速，这是我交出控制权的条件，当然，我也只能得到你人格上的保证了。”</p>
-</blockquote>
-<blockquote>
-<p>孩子们啊，我这两个世纪前的人了，现在居然还能在大学里教物理。”</p>
-</blockquote>
-<blockquote>
-<p>“无聊。”丁仪又摇摇头，“人类在这方面一点儿没变，热衷于追逐虚荣……不过你们放心，我会照办的。其实我只是想看看而已，我真正感兴趣的是这些超技术后面的超理论，不过此生怕是……唉。”</p>
-</blockquote>
-<p>疯狂diss</p>
-<blockquote>
-<p>转移，你可能知道，美国政府刚刚拒绝签署京都议定书……</p>
-</blockquote>
-<h2 id="算法的乐趣-图灵原创-王晓华"><a class="markdownIt-Anchor" href="#算法的乐趣-图灵原创-王晓华"></a> 算法的乐趣 (图灵原创) (王晓华)</h2>
-<blockquote>
-<p>据说，因纽特人不擅长计数，他们曾与世隔绝生存了4000多年，因此让因纽特人从1数到6都需要相当大的勇气。最早到来的白人殖民者居然让因纽特人每天统计狩猎情况，结果导致了因纽特人的暴动。看来数数还是个性命攸关的大事，这些白人殖民者不仅缺德，还缺心眼儿。</p>
-</blockquote>
-<blockquote>
-<p>分治法得到的子问题和原问题是相同的，当然可以用相同的函数来解决，区别只在于问题的规模和范围不同。</p>
-</blockquote>
-<blockquote>
-<p>相互独立且与原问题形式相同的子问题，确保各个子问题的解具有相同的子</p>
-</blockquote>
-<blockquote>
-<p>第三种策略是定义一个价值密度的概念，每次选择都选价值密度最高的物品</p>
-</blockquote>
-<blockquote>
-<p>背包问题（knapsack problem）是此类组合优化的NP完全问题的统称，<br>
-应该是选择最大的面值,且小于41<br>
-这个问题的子问题定义就是从四种币值的硬币中选择一枚，<br>
-元素，除此之外，对数组的基本操作还有插入、删除和查找。数组元素的直接访问几乎没有开销，但是插入和删除操作需要移动数组元素，开销比较<br>
-数组元素的直接访问几乎没有开销，但是插入和删除操作需要移动数组元素，<br>
-递归结构一般由递归关系定义和递归终止条件两部分组成，递归关系定义就是对问题的分解，是指向递归终止条件转化的规则，而递归终止条件通常就是问题分解到最小规模时，这个最小规模的问题对应的结果。<br>
-顺序结构必须是明确的，其结果是不变的。除了确定性，顺序执行结构还具有封闭性特征，也就是说，无论上一步的结果如何，都会继续执行下一步，不受外部条件和内部因素的影响。<br>
-输入输出问题，输入就是将自然语言或人类能够理解的其他表达方式描述的<br>
-能够对一定规范的输入，在有限时间内获得所要求的输出的一系列指令都叫作算法。<br>
-程序员到底需不需要学习算法？这个问题被争论的次数绝对不亚于“Java是不是最好的语言”“VIM和Emacs谁是最好的编辑器”“程序员是不是需要学习数学”。为了避免陷入这样的争论里，我们先对“算法”一词做个转换定义，什么是算法？下面我举几个我亲身经历的例子。<br>
-当然，也破除了“数学是各种科学之母”之类的迷信，数学当然不是“科学之母”，而是“科学之子”，是先有物理学、力学和天文学，才有的数学；先有应用场景后有工具，先有探索后有归</p>
-</blockquote>
-<h2 id="读客经典文库三体全集每个人的书架上都该有套三体关于宇宙的狂野想象套装共3册-刘慈欣-2"><a class="markdownIt-Anchor" href="#读客经典文库三体全集每个人的书架上都该有套三体关于宇宙的狂野想象套装共3册-刘慈欣-2"></a> 读客经典文库：三体全集（每个人的书架上都该有套《三体》！关于宇宙的狂野想象！）（套装共3册） (刘慈欣)</h2>
-<blockquote>
-<p>给时光以生命，而不是给生命以时光。来，为了新生活！”</p>
-</blockquote>
-<blockquote>
-<p>碑是那么小，与其说是为了纪念，更像是为了忘却。</p>
-</blockquote>
-<blockquote>
-<p>“这是人类的落日……”叶文洁轻轻地说。</p>
-</blockquote>
-<blockquote>
-<p>照向射电天线阵列的聚光灯已经熄灭，天线在夜空下变成了简明的黑色二维图案，仿佛是一排抽象的符号，以同一个仰角齐齐地仰望着宇宙，似乎在等待着什么。这景象令汪淼不寒而栗，他想起了《三体》中的那些巨摆。</p>
-</blockquote>
-<h2 id="王小波全集-王小波"><a class="markdownIt-Anchor" href="#王小波全集-王小波"></a> 王小波全集 (王小波)</h2>
-<blockquote>
-<p>合作是个至高无上的范畴，它是不分时刻，不分男女的。它是一个“接受”的范畴，有所作为就不是合作。</p>
-</blockquote>
-<h2 id="读客经典文库了不起的盖茨比这个故事一语道破了我们正在经历的全部-菲茨杰拉德"><a class="markdownIt-Anchor" href="#读客经典文库了不起的盖茨比这个故事一语道破了我们正在经历的全部-菲茨杰拉德"></a> 读客经典文库：了不起的盖茨比（这个故事一语道破了我们正在经历的全部！） (菲茨杰拉德)</h2>
-<p>Bob hair cutting</p>
-<blockquote>
-<p>鲍伯头靠着</p>
-</blockquote>
-<h2 id="casting-aluminum-alloys"><a class="markdownIt-Anchor" href="#casting-aluminum-alloys"></a> Casting-Aluminum-Alloys ()</h2>
-<blockquote>
-<p>The quaternary compound, often denoted as the π-phase, has narrow homogeneity range around composition corresponding to chemical</p>
-</blockquote>
-<blockquote>
-<p>Thermodynamic and other computational approaches are the most perspective for obtaining quantitative estimates.However,today only a small number of all relevant multi-component Al-based phase diagrams have been computed using the CALPHAD</p>
-</blockquote>
-<blockquote>
-<p>Al3Ni2, which in binary Al–Ni system cannot be in equilibrium with (Al), also has a broad homogeneity range, which in ternary system spreads the range</p>
-</blockquote>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/19/2019-5-19/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1153,7 +1113,7 @@ On the other hand, the term “nanocomposite” comprises multiphase materials, 
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+                <time title="修改时间：2019-11-11 17:59:41" itemprop="dateModified" datetime="2019-11-11T17:59:41+08:00">2019-11-11</time>
               </span>
             
           
@@ -1169,8 +1129,7 @@ On the other hand, the term “nanocomposite” comprises multiphase materials, 
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <p><s>从入门到放弃つ﹏⊂。</s></p>
+          <p><s>从入门到放弃つ﹏⊂。</s></p>
 <p>目前为止头疼的地方有：</p>
 <ul>
 <li>
@@ -1185,104 +1144,15 @@ On the other hand, the term “nanocomposite” comprises multiphase materials, 
 </ul>
 <p>这个idea算是帮我复习下Python的用法吧，尽管没有达到理想的效果（完全的script，只需给出xrd实验数据，便可以标注好）。如果牺牲一定自动化，手动给出一些参数，我感觉应该和origin差不多，或者在有三个自定函数下，要比origin方便一丢。</p>
 <p>相比上次这次的plot更加面向对象つ﹏⊂（本以为是自定函数里，无法使用plt.annotate,结果却是参数给错了(￣_￣|||)。还有一点是，不需要手动给出pdf卡片可以从文本直接获取（将其储存在字典里），也可以标定对应峰的晶面指数，具体代码见下，另画的图真丑！</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line"><span class="keyword">from</span> scipy.signal <span class="keyword">import</span> savgol_filter</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_peak_near_data</span><span class="params">(degree_each, xrd_data=[], xrd_step = <span class="number">0.02</span>)</span>:</span><span class="comment">#(这里目前设想再传入一个参数为扫描角度范围)</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    low_bdry = round(degree_each) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> xrd_data[j, <span class="number">0</span>] != low_bdry:</span><br><span class="line">        j = j + <span class="number">1</span></span><br><span class="line">    indice = numpy.where(max(xrd_data[j:j+<span class="number">80</span>, <span class="number">1</span>]) == xrd_data[j:j+<span class="number">80</span>, <span class="number">1</span>]) <span class="comment">#调用where函数取得I局部极值所对应的indice，并从此获得所对应的2theta</span></span><br><span class="line">    <span class="keyword">return</span> xrd_data[indice[<span class="number">0</span>] + j, <span class="number">0</span>], max(xrd_data[j:j+<span class="number">80</span>, <span class="number">1</span>])<span class="comment">#此处返回值为xrd数据上下一定范围的数据点为了后面找峰</span></span><br><span class="line">                                                                <span class="comment">#需要住的是此处通过where返回的indice是切片后的list的下标，因此返回整个list的话需要再加j</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xrd_peak_data</span><span class="params">(data=[], spectrum=[], xrd_theta=[<span class="number">20</span>, <span class="number">90</span>])</span>:</span><span class="comment">#data[]为出入的xrd原始数据，spectrum为从pdf卡片获得的“理论”衍射峰强度，xrd_data用于根据实验的数据角度范围，</span></span><br><span class="line">                                                            <span class="comment">#来判断需要标注几根谱线，而这里正是上面提到的对于某些相，它的前几个峰有的并不明显，需要略过，要加一个强度I判断</span></span><br><span class="line">    j = <span class="number">0</span> <span class="comment">#迭代找出小于theta的最后一根光谱</span></span><br><span class="line">    <span class="keyword">while</span> spectrum[j] &lt;= xrd_theta[<span class="number">1</span>]:</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> j &gt;= len(spectrum):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    k = len(spectrum[<span class="number">0</span>:j<span class="number">-1</span>]) + <span class="number">1</span></span><br><span class="line">    maker = numpy.empty(shape = (k,<span class="number">2</span>)) <span class="comment">#此处为xrd实验数据标记的储存numpy_array</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; k:</span><br><span class="line">        maker[i, <span class="number">0</span>], maker[i, <span class="number">1</span>] = find_peak_near_data(spectrum[i], data) <span class="comment">#调用find_peak_near_data获得局部极值即峰，并将其用2列的numpy_array储存</span></span><br><span class="line">                                                                          <span class="comment">#对于此处想在标定时，加上晶面。目前想法是：将spectrum(从pdf卡片获得理论谱线)用字典(或者pandas的dataframe)</span></span><br><span class="line">                                                                          <span class="comment">#尽管pdf卡片的角度可能与自己实验的有些许差距，但我认为这对于标语（110）这样的晶面应该影响不大</span></span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> maker</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crystal_plane</span><span class="params">(dataframe_a=[], maker=[])</span>:</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(maker[:, <span class="number">0</span>]):</span><br><span class="line">        axes1.annotate(dataframe_a.cp[i],</span><br><span class="line">         xy=(maker[i, <span class="number">0</span>], maker[i, <span class="number">1</span>]+<span class="number">300</span>),</span><br><span class="line">         xytext=(<span class="number">-20</span>, <span class="number">25</span>), </span><br><span class="line">         textcoords=(<span class="string">'offset pixels'</span>))</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">specific_spectrum_aluminum = numpy.array([38.472, 44.738, 65.133, 78.227,  82.435])</span></span><br><span class="line"><span class="string">specific_spectrum_silicon = numpy.array([28.442, 47.302, 56.121, 69.130, 76.377, 88.026])</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">data_1 = numpy.loadtxt(<span class="string">'3.txt'</span>)</span><br><span class="line">data_2 = numpy.loadtxt(<span class="string">'2.txt'</span>)</span><br><span class="line">data_3 = numpy.loadtxt(<span class="string">'4.txt'</span>)</span><br><span class="line"></span><br><span class="line">name = [<span class="string">'theta'</span>, <span class="string">'cp'</span>]</span><br><span class="line">specific_spectrum_silicon = pd.read_csv(<span class="string">"si.txt"</span>, names=name, sep=<span class="string">';'</span>)</span><br><span class="line">specific_spectrum_aluminum = pd.read_csv(<span class="string">"al.txt"</span>, names=name, sep=<span class="string">';'</span>)</span><br><span class="line"></span><br><span class="line">maker_si = xrd_peak_data(data_1, specific_spectrum_silicon.theta)</span><br><span class="line">maker_al = xrd_peak_data(data_1, specific_spectrum_aluminum.theta)</span><br><span class="line"></span><br><span class="line">figure1 = plt.figure()</span><br><span class="line"></span><br><span class="line">axes1 = figure1.add_axes([<span class="number">0.1</span>, <span class="number">0.1</span>, <span class="number">0.8</span>, <span class="number">0.8</span>])</span><br><span class="line">axes1.set_xlabel(<span class="string">"Theta"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">axes1.set_ylabel(<span class="string">"I"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">axes1.plot(data_1[:, <span class="number">0</span>], data_1[:, <span class="number">1</span>], label=<span class="string">'3#'</span>)</span><br><span class="line">axes1.plot(data_2[:, <span class="number">0</span>], data_2[:, <span class="number">1</span>]+<span class="number">100</span>, label=<span class="string">'2#'</span>)</span><br><span class="line">axes1.plot(data_3[:, <span class="number">0</span>], data_3[:, <span class="number">1</span>]+<span class="number">200</span>, label=<span class="string">'4#'</span>)</span><br><span class="line">axes1.scatter(maker_al[:,<span class="number">0</span>], maker_al[:, <span class="number">1</span>] + <span class="number">320</span>, marker=<span class="string">'*'</span>, label=<span class="string">'Al'</span>, s=<span class="number">100</span>)</span><br><span class="line">axes1.scatter(maker_si[:,<span class="number">0</span>], maker_si[:, <span class="number">1</span>] + <span class="number">320</span>, marker=<span class="string">'o'</span>, label=<span class="string">'Si'</span>, s=<span class="number">100</span>)</span><br><span class="line">axes1.legend(loc=<span class="string">'upper right'</span>, title = <span class="string">'Legend'</span>) <span class="comment">#图例感觉不太好看需要修改</span></span><br><span class="line">crystal_plane(specific_spectrum_aluminum, maker_al)</span><br><span class="line">crystal_plane(specific_spectrum_silicon, maker_si)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="Figure_1.png" alt="Output"></p>
-
+          <!--noindex-->
           
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/04/16/xrd-alpha0-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gl L">
-      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Glenn's Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/04/16/xrd-alpha0-2/" class="post-title-link" itemprop="url">使用Python绘制XRD数据图(alpha)</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-16 18:13:02" itemprop="dateCreated datePublished" datetime="2019-04-16T18:13:02+08:00">2019-04-16</time>
-            </span>
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/25/xrd-final/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <p>目前还差一个pdf文件接口的函数，但是对于一些金属间化合物相的标定仍然不太清楚，个别相有许多特征谱线，但是有些峰在xrd实验数据上并不明显，需要人为，或者加一个衍射强度I的判断。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line"><span class="keyword">from</span> scipy.signal <span class="keyword">import</span> savgol_filter</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_peak_near_data</span><span class="params">(degree_each, xrd_data=[], xrd_step = <span class="number">0.02</span>)</span>:</span><span class="comment">#(这里目前设想再传入一个参数为扫描角度范围)</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    low_bdry = round(degree_each) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> xrd_data[j, <span class="number">0</span>] != low_bdry:</span><br><span class="line">        j = j + <span class="number">1</span></span><br><span class="line">    indice = numpy.where(max(xrd_data[j:j+<span class="number">200</span>, <span class="number">1</span>]) == xrd_data[j:j+<span class="number">200</span>, <span class="number">1</span>]) <span class="comment">#调用where函数取得I局部极值所对应的indice，并从此获得所对应的2theta</span></span><br><span class="line">    <span class="keyword">return</span> xrd_data[indice[<span class="number">0</span>] + j, <span class="number">0</span>], max(xrd_data[j:j+<span class="number">200</span>, <span class="number">1</span>])<span class="comment">#此处返回值为xrd数据上下一定范围的数据点为了后面找峰</span></span><br><span class="line">                                                                <span class="comment">#需要住的是此处通过where返回的indice是切片后的list的下标，因此返回整个list的话需要再加j</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xrd_peak_data</span><span class="params">(data=[], spectrum=[], xrd_theta=[<span class="number">20</span>, <span class="number">90</span>])</span>:</span><span class="comment">#data[]为出入的xrd原始数据，spectrum为从pdf卡片获得的“理论”衍射峰强度，xrd_data用于根据实验的数据角度范围，</span></span><br><span class="line">                                                            <span class="comment">#来判断需要标注几根谱线，而这里正是上面提到的对于某些相，它的前几个峰有的并不明显，需要略过，要加一个强度I判断</span></span><br><span class="line">    j = <span class="number">0</span> <span class="comment">#迭代找出小于theta的最后一根光谱</span></span><br><span class="line">    <span class="keyword">while</span> spectrum[j] &lt;= xrd_theta[<span class="number">1</span>]:</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> j &gt;= len(spectrum):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    k = len(spectrum[<span class="number">0</span>:j<span class="number">-1</span>]) + <span class="number">1</span></span><br><span class="line">    maker = numpy.empty(shape = (k,<span class="number">2</span>)) <span class="comment">#此处为xrd实验数据标记的储存numpy_array</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; k:</span><br><span class="line">        maker[i, <span class="number">0</span>], maker[i, <span class="number">1</span>] = find_peak_near_data(spectrum[i], data) <span class="comment">#调用find_peak_near_data获得局部极值即峰，并将其用2列的numpy_array储存</span></span><br><span class="line">                                                                          <span class="comment">#对于此处想在标定时，加上晶面。目前想法是：将spectrum(从pdf卡片获得理论谱线)用字典(或者pandas的dataframe)</span></span><br><span class="line">                                                                          <span class="comment">#尽管pdf卡片的角度可能与自己实验的有些许差距，但我认为这对于标语（110）这样的晶面应该影响不大</span></span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> maker</span><br><span class="line"></span><br><span class="line">data_1 = numpy.loadtxt(<span class="string">'2.txt'</span>)</span><br><span class="line">specific_spectrum_aluminum = numpy.array([<span class="number">38.472</span>, <span class="number">44.738</span>, <span class="number">65.133</span>, <span class="number">78.227</span>,  <span class="number">82.435</span>])</span><br><span class="line">specific_spectrum_silicon = numpy.array([<span class="number">28.442</span>, <span class="number">47.302</span>, <span class="number">56.121</span>, <span class="number">69.130</span>, <span class="number">76.377</span>, <span class="number">88.026</span>])</span><br><span class="line">maker_si = xrd_peak_data(data_1, specific_spectrum_silicon)</span><br><span class="line">maker_al = xrd_peak_data(data_1, specific_spectrum_aluminum)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">"Theta"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">plt.ylabel(<span class="string">"I"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">plt.plot(data_1[:, <span class="number">0</span>], data_1[:, <span class="number">1</span>])</span><br><span class="line">plt.scatter(maker_al[:,<span class="number">0</span>], maker_al[:, <span class="number">1</span>] + <span class="number">20</span>, marker=<span class="string">'*'</span>, label=<span class="string">'Al'</span>, s=<span class="number">100</span>)</span><br><span class="line">plt.scatter(maker_si[:,<span class="number">0</span>], maker_si[:, <span class="number">1</span>] + <span class="number">20</span>, marker=<span class="string">'o'</span>, label=<span class="string">'Si'</span>, s=<span class="number">100</span>)</span><br><span class="line">plt.legend(loc=<span class="string">'upper right'</span>, title = <span class="string">'Phases'</span>) <span class="comment">#图例感觉不太好看需要修改</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="Figure_1.png" alt="Output"></p>
-<p>下面是从PDF文件读取标准spectrum，并将其储存在与其晶面对应成键的dataframe中。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">name = [<span class="string">'theta'</span>, <span class="string">'cp'</span>]</span><br><span class="line">data = pd.read_csv(<span class="string">"al.txt"</span>, names=name, sep=<span class="string">';'</span>) </span><br><span class="line">print(data.shape,data.cp[<span class="number">0</span>:<span class="number">4</span>],sep=<span class="string">'\n'</span>)</span><br><span class="line">plt.xlabel(<span class="string">"Theta"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">plt.ylabel(<span class="string">"I"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">I = [<span class="number">100</span>,<span class="number">200</span>,<span class="number">100</span>,<span class="number">400</span>]</span><br><span class="line">plt.scatter(data.theta[<span class="number">0</span>:<span class="number">4</span>], I, marker=<span class="string">'*'</span>,label=<span class="string">'Al'</span>)</span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; len(data.theta[<span class="number">0</span>:<span class="number">4</span>]):</span><br><span class="line">    plt.annotate(data.cp[i], xy=(data.theta[i], I[i]), xytext=(<span class="number">-15</span>, <span class="number">10</span>), textcoords=<span class="string">'offset points'</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment">#for i in range(len(data['theta'])):</span></span><br></pre></td></tr></table></figure>
-<p><img src="Figure_2.png" alt="Output"></p>
-<p>最后，对xrd相标注的正确性是这个script有用的前提条件つ﹏⊂。。。。。。。。。。。。。。</p>
-
-          
+          <!--/noindex-->
         
       
     </div>
@@ -1341,7 +1211,7 @@ On the other hand, the term “nanocomposite” comprises multiphase materials, 
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

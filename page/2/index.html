@@ -198,6 +198,100 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/04/16/xrd-alpha0-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gl L">
+      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Glenn's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/04/16/xrd-alpha0-2/" class="post-title-link" itemprop="url">使用Python绘制XRD数据图(alpha)</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-16 18:13:02" itemprop="dateCreated datePublished" datetime="2019-04-16T18:13:02+08:00">2019-04-16</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-11 17:59:42" itemprop="dateModified" datetime="2019-11-11T17:59:42+08:00">2019-11-11</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>目前还差一个pdf文件接口的函数，但是对于一些金属间化合物相的标定仍然不太清楚，个别相有许多特征谱线，但是有些峰在xrd实验数据上并不明显，需要人为，或者加一个衍射强度I的判断。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/16/xrd-alpha0-2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/04/12/xrd-alpha/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -241,7 +335,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+                <time title="修改时间：2019-11-11 17:59:42" itemprop="dateModified" datetime="2019-11-11T17:59:42+08:00">2019-11-11</time>
               </span>
             
           
@@ -257,8 +351,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <p>装一下，给自己点压力つ﹏⊂</p>
+          <p>装一下，给自己点压力つ﹏⊂</p>
 <blockquote>
 <p>“你们用了半个世纪的时间，让一截三毫米的头发移动了两厘米”程心回答</p>
 </blockquote>
@@ -267,10 +360,15 @@
 </blockquote>
 <p>重新思考了一下整个程序要干什么，需要输入那些数据，需要对这些数据做什么操作，尝试去把这些操作函数化，并且尝试泛化一些参数（不过目前的范围还是限定在铝合金中一些常见相的标定，感觉目前去写pdf卡片的接口有点不现实）。目前的设想是把每个相打包成一个模块，需要要的话直接导入，这样感觉代码可能会更加可读(抑或将每个相向axes添加曲线的过程函数化)。好像整个project的架构还是没清楚つ﹏⊂</p>
 <p>目前的代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line"><span class="keyword">from</span> scipy.signal <span class="keyword">import</span> savgol_filter</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_peak_near_data</span><span class="params">(degree_each, xrd_data=[], xrd_step = <span class="number">0.02</span>)</span>:</span> <span class="comment">#这里目前设想再传入一个参数为扫描角度范围</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    low_bdry = round(degree_each) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> xrd_data[j, <span class="number">0</span>] != low_bdry:</span><br><span class="line">        j = j + <span class="number">1</span></span><br><span class="line">    indice = numpy.where(max(xrd_data[j:j+<span class="number">200</span>, <span class="number">1</span>]) == xrd_data[j:j+<span class="number">200</span>, <span class="number">1</span>])</span><br><span class="line">    <span class="keyword">return</span> xrd_data[indice[<span class="number">0</span>] + j, <span class="number">0</span>], max(xrd_data[j:j+<span class="number">200</span>, <span class="number">1</span>])<span class="comment">#此处返回值为xrd数据上下一定范围的数据点为了后面找峰</span></span><br><span class="line"></span><br><span class="line">data_1 = numpy.loadtxt(<span class="string">'2.txt'</span>)</span><br><span class="line"></span><br><span class="line">maker_al = numpy.empty(shape = (<span class="number">4</span>,<span class="number">2</span>)) <span class="comment">#4为特征谱线的个数，这里能不能把写进函数里，利用角度范围确定；又或者将这一块代码函数化</span></span><br><span class="line">specific_spectrum_aluminum = numpy.array([<span class="number">38.472</span>, <span class="number">44.738</span>, <span class="number">65.133</span>, <span class="number">78.227</span>])</span><br><span class="line">i = <span class="number">0</span> </span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="number">4</span>:</span><br><span class="line">    maker_al[i, <span class="number">0</span>], maker_al[i, <span class="number">1</span>] = find_peak_near_data(specific_spectrum_aluminum[i], data_1)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">maker_si = numpy.empty(shape = (<span class="number">4</span>,<span class="number">2</span>)) <span class="comment">#4为特征谱线的个数，这里能不能把写进函数里，利用角度范围确定；又或者将这一块代码函数化</span></span><br><span class="line">specific_spectrum_silicon = numpy.array([<span class="number">28.442</span>, <span class="number">47.302</span>, <span class="number">56.121</span>, <span class="number">69.130</span>])</span><br><span class="line">j = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> j &lt; <span class="number">4</span>:</span><br><span class="line">    maker_si[j, <span class="number">0</span>], maker_si[j, <span class="number">1</span>] = find_peak_near_data(specific_spectrum_silicon[j], data_1)</span><br><span class="line">    j += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">"Theta"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">plt.ylabel(<span class="string">"I"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">plt.plot(data_1[:, <span class="number">0</span>], data_1[:, <span class="number">1</span>])</span><br><span class="line">plt.scatter(maker_al[:,<span class="number">0</span>], maker_al[:, <span class="number">1</span>] + <span class="number">20</span>, marker=<span class="string">'*'</span>, label=<span class="string">'Al'</span>, s=<span class="number">100</span>)</span><br><span class="line">plt.scatter(maker_si[:,<span class="number">0</span>], maker_si[:, <span class="number">1</span>] + <span class="number">20</span>, marker=<span class="string">'o'</span>, label=<span class="string">'Si'</span>, s=<span class="number">100</span>)</span><br><span class="line">plt.legend(loc=<span class="string">'upper right'</span>, title = <span class="string">'Phases'</span>)<span class="comment">#图例感觉不太好看需要修改</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="Figure_1.png" alt="Output"></p>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/12/xrd-alpha/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -339,7 +437,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+                <time title="修改时间：2019-11-11 17:59:40" itemprop="dateModified" datetime="2019-11-11T17:59:40+08:00">2019-11-11</time>
               </span>
             
           
@@ -355,13 +453,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <p>计划使用Python绘制XRD图，避免一遍又一遍的绘制改图的参数。但是（总有个但是）发现整体实现下来颇为复杂つ﹏⊂</p>
+          <p>计划使用Python绘制XRD图，避免一遍又一遍的绘制改图的参数。但是（总有个但是）发现整体实现下来颇为复杂つ﹏⊂</p>
 <p>demo代码见下，绘出的图见下（完全以一个门外汉的思维写代码*。*</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> scipy.signal <span class="keyword">import</span> savgol_filter</span><br><span class="line"></span><br><span class="line">a = numpy.loadtxt(<span class="string">'1.txt'</span>)</span><br><span class="line">b = numpy.loadtxt(<span class="string">'2.txt'</span>)</span><br><span class="line">c = numpy.loadtxt(<span class="string">'3.txt'</span>)</span><br><span class="line">d = numpy.loadtxt(<span class="string">'4.txt'</span>)</span><br><span class="line">theta1 = a[:,<span class="number">0</span>]</span><br><span class="line">theta2 = b[:,<span class="number">0</span>]</span><br><span class="line">theta3 = c[:,<span class="number">0</span>]</span><br><span class="line">theta4 = d[:,<span class="number">0</span>]</span><br><span class="line">i1 = a[:,<span class="number">1</span>] + <span class="number">600</span></span><br><span class="line">i2 = b[:,<span class="number">1</span>] + <span class="number">400</span></span><br><span class="line">i3 = c[:,<span class="number">1</span>] + <span class="number">200</span></span><br><span class="line">i4 = d[:,<span class="number">1</span>]</span><br><span class="line">i1 = savgol_filter(i1, <span class="number">7</span>, <span class="number">3</span>) <span class="comment">#savgol——filter滤波</span></span><br><span class="line">i2 = savgol_filter(i2, <span class="number">7</span>, <span class="number">3</span>)</span><br><span class="line">i3 = savgol_filter(i3, <span class="number">7</span>, <span class="number">3</span>)</span><br><span class="line">i4 = savgol_filter(i4, <span class="number">7</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">#rc('axes', linewidth=2)#改变图框线宽</span></span><br><span class="line">plt.axis([<span class="number">20</span>, <span class="number">80</span>, <span class="number">-7</span>, <span class="number">3000</span>])</span><br><span class="line">plt.xlabel(<span class="string">"Theta"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line">plt.ylabel(<span class="string">"I"</span>,fontsize=<span class="number">13</span>,fontweight=<span class="string">'bold'</span>)</span><br><span class="line"></span><br><span class="line">specific_spectrum_aluminum = numpy.array([<span class="number">38.472</span>, <span class="number">44.738</span>, <span class="number">65.133</span>, <span class="number">78.227</span>])</span><br><span class="line">peak_data_in_xrd = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_peak_near_data</span><span class="params">(degree_each, xrd_data=[])</span>:</span> <span class="comment">#寻峰</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    low_bdry = degree_each - <span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> xrd_data[j, <span class="number">0</span>] != low_bdry:</span><br><span class="line">        j = j + <span class="number">1</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    调试</span></span><br><span class="line"><span class="string">    else:</span></span><br><span class="line"><span class="string">        print(j)</span></span><br><span class="line"><span class="string">        print(data_1[j:j+200, 1])</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="keyword">return</span> max(xrd_data[j:j+<span class="number">200</span>, <span class="number">1</span>]) <span class="comment">#此处返回值为xrd数据上下一定范围的数据点为了后面找出峰。</span></span><br><span class="line">                                     <span class="comment">#200为4°（上下2°范围，然后除以步长0.02°得到的</span></span><br><span class="line"></span><br><span class="line">m = <span class="number">0</span> <span class="comment">#m为xrd数据所包含目标相的特征谱线根数（注意数组的起始为0）</span></span><br><span class="line"><span class="keyword">while</span> m &lt; <span class="number">4</span>:</span><br><span class="line">    lb = int(round(specific_spectrum_aluminum[m]))</span><br><span class="line">    peak_data_in_xrd.append(find_peak_near_data(lb, a) + <span class="number">600</span>)</span><br><span class="line">    m = m + <span class="number">1</span></span><br><span class="line">plt.scatter(specific_spectrum_aluminum, peak_data_in_xrd, marker=<span class="string">'*'</span>, label=<span class="string">'Al'</span>, s=<span class="number">100</span>)</span><br><span class="line">plt.legend(loc=<span class="string">'upper right'</span>, title = <span class="string">'Phases'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.plot(theta1,i1,linewidth=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#plt.plot(theta2,i2,linewidth=1)</span></span><br><span class="line">plt.plot(theta3,i3,linewidth=<span class="number">1</span>)</span><br><span class="line">plt.plot(theta4,i4,linewidth=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#plt.plot(theta1, a[:,1])</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="Figure_1.png" alt="Output"></p>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/10/xrd/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -430,7 +532,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+                <time title="修改时间：2019-11-11 17:59:50" itemprop="dateModified" datetime="2019-11-11T17:59:50+08:00">2019-11-11</time>
               </span>
             
           
@@ -446,8 +548,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <h1 id="明朝那些事儿套装全7册-中国历史那些事儿系列-当年明月"><a class="markdownIt-Anchor" href="#明朝那些事儿套装全7册-中国历史那些事儿系列-当年明月"></a> 明朝那些事儿(套装全7册) (中国历史那些事儿系列) (当年明月)</h1>
+          <h1 id="明朝那些事儿套装全7册-中国历史那些事儿系列-当年明月"><a class="markdownIt-Anchor" href="#明朝那些事儿套装全7册-中国历史那些事儿系列-当年明月"></a> 明朝那些事儿(套装全7册) (中国历史那些事儿系列) (当年明月)</h1>
 <blockquote>
 <p>只有真正了解这个世界的丑陋与污浊，被现实打击，被痛苦折麽，遍体鳞伤，无所遁形，却从未放弃对光明的追寻，却依然微笑着，坚定前行的人，才是真正的勇者</p>
 </blockquote>
@@ -455,85 +556,15 @@
 <blockquote>
 <p>“你曾经有机会选择”，道出自由主义的要义。作为一种政治哲学，自由主义是关于政府角色的理论，但是另一方面，它也是关于个人责任的理论。因为正是个体在其日常生活中对自由的实践，使得限制政府专权变得可能。一个自由制度就像一条公路，没有无数清洁工、修路工持之以恒的清扫修补，它将很快在风吹日晒中退化为荒野。也正是在这个意义上来说，一个“最小政府”的前提恰恰是“最充分的个人”。人类通过左翼或右翼极权主义逃避自由的冲动也由此可以理解，因为越大的自由意味着越大的责任，因为一个自由的人注定是一个精神上的孤儿，他无依无靠，除了自己的头脑和心灵。看这个话剧，不能不想起中国曾经的残酷政治运动。从20世纪80年代到现在，“伤痕文学”层出不穷。上至老右派，下至红卫兵，几乎人人都自称是牺牲品。也许所有这些人都应该去看看《Burnt by the Sun》，那么他们也许会明白：如果你曾经在文革早期曾积极批斗过别人，那么你在文革后期被赶下去就不再无辜；如果你曾经在大跃进中强迫农民交出不存在的藏粮，那么你在四清中被批斗就不再无辜；如果你曾经暴力剥夺“地富反坏右”的财产，那么你在公社化运动中眼睁睁地看着自家粮食被村干部抢走时就不再无辜；如果你曾经心安理得地接受这个委员称号那个职务待遇，那么你被打成右派时就不再无辜……如果你在这一切运动中一直保持沉默，那么当你被卷入政治斗争的机器中血肉横飞时，你要知道，不是别人，你，你自己，是自己的掘墓人。当然，今天去苛责历史人物也许太奢侈。在肉体毁灭和精神毁灭之间的选择，也许根本就不是自由。专制制度的残酷，就在于它让个体在这种“不可能”和那种“不可能”之间进行选择。从这个角度来说，生长于今天这个时代的人未必更好，只是更幸运而已。也许任何时代的人可以做的，只是在“可能”变成“不可能”之前，及时地说不。</p>
 </blockquote>
-<blockquote>
-<p>当Marousia的奶奶不断追忆“解放前”的音乐多美好时，Sergei问：如果你们真觉得过去的时光多么美好，你们为什么不站出来捍卫它呢？你曾经有机会选择</p>
-</blockquote>
-<blockquote>
-<p>专制能够得逞，不可能靠一个人的伎俩，它一定是成千上万人合力的结果：是他们的“协助”，或至少他们的沉默，为专制者铺好了台阶。</p>
-</blockquote>
-<blockquote>
-<p>肃反清洗的恐怖，是每个人，每个普普通通的人——当时作出的选择。专制能够得逞，不可能靠一个人的伎俩，它一定是成千上</p>
-</blockquote>
-<blockquote>
-<p>不存在所谓的被迫，每个人都有机会选择，只要你愿意为之付出代价！</p>
-</blockquote>
-<h1 id="黄金时代-王小波全集作家出版社典藏版本-王小波"><a class="markdownIt-Anchor" href="#黄金时代-王小波全集作家出版社典藏版本-王小波"></a> 黄金时代-王小波全集(作家出版社典藏版本) (王小波)</h1>
-<blockquote>
-<p>人在四十岁之前，过得很慢，过了四十岁，过得就快了。</p>
-</blockquote>
-<blockquote>
-<p>只为线条一句话，我就把这表卖了，二十年来未曾后悔过，直到她说我是秫秸秆才后悔了！</p>
-</blockquote>
-<blockquote>
-<p>似水流年是一个人所有的一切，只有这个东西，才真正归你所有。其余的一切，都是片刻的欢娱和不幸，转眼间就已跑到那似水流年里去了。我所认识的人，都不珍视自己的似水流年。他们甚至不知道，自己还有这么一件东西，所以一个个像丢了魂一样。</p>
-</blockquote>
-<blockquote>
-<p>不少人听说我会写小说，就找上门来，述说自己的爱情故事。在他们看来，自己的爱情可以写入小说，甚至载入史册。对此我是来者不拒。不过当我把这些故事写入小说时，全是用男性第一人称。一方面驾轻就熟，另一方面我也过过干瘾。但是写李先生的爱情故事我不用第一人称，因为它是我的伤心之事。线条原该是我老婆的，可她成了龟头血肿夫人！</p>
-</blockquote>
-<h1 id="送你一颗子弹-刘瑜-2"><a class="markdownIt-Anchor" href="#送你一颗子弹-刘瑜-2"></a> 送你一颗子弹 (刘瑜)</h1>
-<blockquote>
-<p>想清楚了这一点，我在匈牙利咖啡馆坐得心安理得起来。这哪是什么左翼咖啡馆，它就是看上去有点“波西米亚”而已。我对波西米亚风格的理解是：当小资厌倦了自己，他就需要时不时地冒充无产阶级。中国的知识分子由于原罪感而发动了一场浩大的革命，西方的知识分子由于原罪感而发明了一个时尚流派。他们的救赎真是比我们的有效率。</p>
-</blockquote>
-<blockquote>
-<p>在外面吃饭，有人点一道叫摇滚沙拉的菜，说是招待“国际友人”。 两个穿红旗袍的小姐，一个举着一个塑料圆柱体，里面装了一筒蔬菜。另一个托着一个盘子，里面放了无数小碟子。拿蔬菜的小姐，把碟子里的东西一样一样往蔬菜筒里倒：花椒、西红柿酱、蜂蜜……然后，她关上盒子，先在左边使劲摇，边摇边说：“摇一摇，欢迎宾客到。”然后换到右边摇，说：“摇二摇，幸福自然来。”又换到前面晃，说：“摇三摇，身体健康最重要。”最后放下蔬菜简，说；“摇四摇，财源滚滚来！” 大家热烈叫好。 我心里只是难过。真的有必要这样么？只是一个沙拉而已。我亲爱的祖国啊，真的有必要吗，只是一个沙拉而已。</p>
-</blockquote>
-<blockquote>
-<p>也许，他也只有通过“不想”来逃避这件事情的沉重，因为一个人认识论的飞跃恰恰就发生在“想”的那一刻，因为人道主义的起点在于一个人面对另一个受苦的人并且心里“咯噔”一声：如果我是他呢？</p>
-</blockquote>
-<blockquote>
-<p>我想象，假设中国各大城市也开始绑匪成风，中国的经济萧条估计为时不远了。哦，忘了，这事其实几十年前早发生过了，只不过当时绑匪是穿着制服，而且是独家经营。</p>
-</blockquote>
-<blockquote>
-<p>民粹主义式的救国，是饮鸩止渴。改善贫困向来有两种方式：一种是直接的利益再分配，一种是间接的投资激励。前者往往可以成为政客发家的捷径。直接的小恩小惠，加上政客充满激情的民粹主义口号，可以造就查韦斯、卡斯特罗这种“拉美英雄”。问题是，拉美人民热血也沸腾过了，有钱人也给诅咒过了，能国有化的都国有化了，也庇隆过了，也格瓦拉过了，也卡斯特罗过了，他们所指望的繁荣富强以及均贫富等贵贱就是迟迟不肯来临。当然，你永远可以诅咒美国。</p>
-</blockquote>
-<blockquote>
-<p>They just give up me to become us, 但，自暴自弃的最高表现形式并不是枯竭或者对枯竭的不加掩饰，而是通过投入集体的怀抱来升华这种枯竭，赞美这种枯竭，顶礼膜拜这种枯竭。这种升华充分体现在重庆人民沈阳球迷以及恒源祥广告腔的声音里。摆脱了智力想像力和勇气的负担，你就摆脱了自我，也就是，光荣地融入了人民群众的汪洋大海啦。</p>
-</blockquote>
-<blockquote>
-<p>若是人人心中都有一个同情心的底线呢？一个政治、法律、宗教都无法突破的底线呢？也许人世的希望不在于发现真理，而在于追问一句，发现真理又如何。</p>
-</blockquote>
-<p>也许这才是我的方法</p>
-<blockquote>
-<p>而朱莉娅的丈夫、马蒂奥的哥哥尼古拉则不同。他温和而不消极，明辨是非但不急于求成。改造世界对他来说不是将一个制度连根拔起，而是以给予身边的人一点一滴的温暖开始。佐珍，片中那个被精神病院非法电击的女孩，最后不是被左翼朱莉娅或者警察马蒂奥拯救，而是在尼古拉几十年的照看下慢慢恢复。当佐珍完全将自己封闭起来时，他对她说：你每天来给我的植物浇水吧，它们需要你。</p>
-</blockquote>
-<blockquote>
-<p>坐在莉莉的车里，突然想起初中政治课本里那句话，那句小时候完全读不懂、稍大很反感、现在却觉得很触目惊心的话。它说：所谓国家，就是阶级统治的暴力工具。</p>
-</blockquote>
-<blockquote>
-<p>阶级啊，这就是阶级，我心里叹息。所谓奢侈生活，前提就是阶级的差异。虽然阶级差异在世界各地无处不在，但在此时此地，它是如此明目张胆，有恃无恐，甚至不需要遮羞布。</p>
-</blockquote>
-<blockquote>
-<p>如果说有一场运动与新文化运动呈对角线关系，那就是延安整风运动。新</p>
-</blockquote>
-<blockquote>
-<p>丁玲的写作变迁史，就是个体逐渐隐退让位于集体、怀疑逐渐让位于信条的历史。她转折的关键时刻是1942年的5月。</p>
-</blockquote>
-<p>这个就有点。。。。。。</p>
-<blockquote>
-<p>可惜这种向可能性敞开的新文化精神后来逐渐凋零，对这个凋零过程最好的注释莫过于丁玲。1927年，也就是丁玲还是一位美女作家的时候，在《莎菲女士的日记》中，她写道：“是的，我了解我自己，不过是一个女性十足的女人，女人只把心思放到她要征服的男人们身上。我要占有他，我要他无条件的献上他的心，跪着求我赐给他的吻呢……但他却如此的冷淡，冷淡得使我又恨他了。然而我心里在想：来呀，抱我，我要吻你！”而1979年，历经反右、监禁、流放之后，这位曾经的美女作家的文字已经变成一个庞大的国家机器的轰鸣。其晚期作品《杜晚香》这样写道：“杜晚香的汇报，转到了革命胜利后带来的新的光辉天地。于是一阵春风吹进文化宫的礼堂，人们被一种崭新的生活所鼓舞，广阔的、五彩绚丽的波涛，随着杜晚香的朴素言辞滚滚而来，祖国！人民的祖国！你是多么富饶，多么广袤！……人们听到这里，从心中涌出一股热流，只想高呼：党呵！英明而伟大的党呵！你给人世间的是光明！是希望！是温暖！是幸福！”</p>
-</blockquote>
-<blockquote>
-<p>可惜这种向可能性敞开的新文化精神后来逐渐凋零，对这个凋零过程最好的注释莫过于丁玲。<br>
-黄金时代-王小波全集(作家出版社典藏版本) (王小波)</p>
-</blockquote>
-<blockquote>
-<p>我第一次和铃子搭话，预先找过无数借口，可是都觉得不充分，不足以掩饰我要搞她的动机：那年头男女青年要不是为了这样的目的，可以一辈子不搭话。</p>
-</blockquote>
-<blockquote>
-<p>时的心境相仿。 我第一次和铃子搭话，预先找过无数借口，可是都觉得不充分，不足以掩饰我要搞她的动机：那年头男女青年要不是为了这样的目的，可以一辈子不搭话。</p>
-</blockquote>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/14/1-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -602,7 +633,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+                <time title="修改时间：2019-11-11 17:59:44" itemprop="dateModified" datetime="2019-11-11T17:59:44+08:00">2019-11-11</time>
               </span>
             
           
@@ -619,7 +650,8 @@
 
       
           
-            <p><img src="airport.jpg" alt="Airport"></p>
+            <a id="more"></a>
+<p><img src="airport.jpg" alt="Airport"></p>
 
           
         
@@ -898,7 +930,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+                <time title="修改时间：2019-11-11 17:59:46" itemprop="dateModified" datetime="2019-11-11T17:59:46+08:00">2019-11-11</time>
               </span>
             
           
@@ -914,8 +946,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <h1 id="读书摘录"><a class="markdownIt-Anchor" href="#读书摘录"></a> 读书摘录</h1>
+          <h1 id="读书摘录"><a class="markdownIt-Anchor" href="#读书摘录"></a> 读书摘录</h1>
 <p>在kindle上进行标注，然后使用KindleMate进行转换，在使用Markdown排下。记录一下自己认为有意思的句子。</p>
 <h2 id="flipped-怦然心动中英双语典藏版-文德琳范德拉"><a class="markdownIt-Anchor" href="#flipped-怦然心动中英双语典藏版-文德琳范德拉"></a> FLIPPED 怦然心动（中英双语典藏版） (文德琳·范·德拉)</h2>
 <p>突然之间有了铠甲，软肋（这句原来在知乎上看到~</p>
@@ -923,152 +954,15 @@
 <p>-“Can you climb that high?” he called up to me.<br>
 -“Sure!” I called back. And up, up, up I went!</p>
 </blockquote>
-<h2 id="拆掉思维里的墙原来我还可以这样活-古典"><a class="markdownIt-Anchor" href="#拆掉思维里的墙原来我还可以这样活-古典"></a> 拆掉思维里的墙：原来我还可以这样活 (古典)</h2>
-<p>特殊推个一般？？？</p>
-<blockquote>
-<p>1951年，巴菲特在哥伦比亚大学毕业，由于在纽约找不到工作，他回到了老家奥马哈做股票经纪人，就相当于今天证券公司的一名普通员工。 1952年，蚁族巴菲特遇到了自己喜欢的姑娘苏珊。据说老巴在结婚的时候跟他老婆说：“亲爱的，我现在给你两个选择，我工作一年攒下来了一万多美金。现在一是可以花1万美金买套小房子，二是让我拿这1万美金去投资，过几年买套大的。”苏珊说：“好，我相信你。” 1952年，蚁族巴菲特裸婚，与老婆苏珊租下两房一厅，晚上都能听到老鼠在天花板上开派对。 1953年，他们的第一个女儿出生了。 1956年，租房子住了4年后，26岁的巴菲特成立巴菲特联合有限公司（Buffett Associates，Ltd．），开始创业。 1958年，他的投资开始稳定获利，他花了3.15万美元买下位于奥马哈的一座灰色小楼，至今仍住在那里。 1962年，10年后，巴菲特赚到了自己人生的第一个100万（美元）。 2008年，财产620亿美元，成为世界首富。</p>
-</blockquote>
-<h2 id="知乎畅销电子书套装共三十册-知乎"><a class="markdownIt-Anchor" href="#知乎畅销电子书套装共三十册-知乎"></a> 知乎畅销电子书套装（共三十册） (知乎)</h2>
-<p>Flag还是不要乱立</p>
-<blockquote>
-<p>朕此生若负了你，从开辟以来未有如朕之负心之人也。朕前谕字字出于至诚。朕一切赏罚若有一点作用笼络将人作犬马待的心，自己亦成犬马之主矣。朕从不肯轻人，你是知朕者，可将朕之心不时晓谕兵将等，朕凡为皆出本心的，令他等知道。</p>
-</blockquote>
-<h2 id="读客经典文库漫长的告别怪不得村上春树读了12遍每每陷入困境村上春树便打开漫长的告别说一声再见就是死去一点点-雷蒙德钱德勒"><a class="markdownIt-Anchor" href="#读客经典文库漫长的告别怪不得村上春树读了12遍每每陷入困境村上春树便打开漫长的告别说一声再见就是死去一点点-雷蒙德钱德勒"></a> 读客经典文库：漫长的告别（怪不得村上春树读了12遍！每每陷入困境，村上春树便打开《漫长的告别》！说一声再见，就是死去一点点。） (雷蒙德·钱德勒)</h2>
-<blockquote>
-<p>人死重于心碎”(Dead men are heavier than broken hearts)，这句话来自钱德勒《长眠不醒》。钱德勒之前的墓志铭仍然保留着：向前一步，就是新生(The new one is at the foot)。</p>
-</blockquote>
-<blockquote>
-<p>一声再见，就是死去一点点。</p>
-</blockquote>
-<blockquote>
-<p>“求你了。咱们别提起他，也别提起韦德家那根金发冰柱，还有她醉醺醺自寻死路的倒霉丈夫。你想当全世界唯一拒绝我的男人？这算什么样的自尊？我给了你我心目中最了不起的赞美。我求你娶我。” “你给过我更了不起的赞美。” 她开始落泪。“你这个傻瓜，彻头彻尾的傻瓜!”她的面颊湿了。我能感觉到她脸上的泪水。“就算只维持六个月或一两年又怎样？除了你办公桌和百叶窗上的灰尘，除了你空虚生活里的孤独，你到底能失去什么？” “你还想要香槟吗？” “好吧。” 我搂住她，她趴在我肩膀上哭泣。她没有爱上我，我知道，她也知道。她不是因为我哭。她只是到了该洒几滴眼泪的时候。 然后她坐起来，我下床，她去卫生间补妆。我端来香槟。她回来时面带微笑。 “很抱歉，我闹得不成体统，”她说，“过上六个月，我连你叫什么都记不得了。拿到客厅去。我想见点光线。” 我照她说的做。她和先前一样坐进长沙发。我把香槟放在她面前。她看着酒杯，但没去拿。 “我会介绍一下我自己，”我说，“然后咱们可以喝一杯。” “就像今晚？” “今晚一去就不会再来了。” 她拿起酒杯，慢慢喝了一小口，然后在长沙发上转动身体，把剩下的酒泼在我脸上。然后她又开始哭。我拿出手帕，擦干净我的脸，然后为她擦脸。 “我不知道我为什么那么做，”她说，“但老天在上，你别说什么我是女人，女人从不知道她们为什么做什么事。” 我又在她杯子里倒了些香槟，朝她笑笑。她慢慢喝掉，然后转向另一侧，横躺在我大腿上。 “我累了，”她说，“这下你得抱我回去了。” 没多久，她就睡着了。</p>
-</blockquote>
-<p>羡慕</p>
-<blockquote>
-<p>“咱们在一起难道不是很美满，很合情合理吗？”她挖苦地说，“我是个有钱的女人，亲爱的，以后会富可敌国。要是这个世界值得花钱，我可以整个儿买给你。你说你有什么？回家只有空荡荡的屋子，连一只猫一条狗都没养，还有个又小又憋闷的办公室让你闷坐苦等。就算我和你离婚，我也不会让你回去过这种生活。”</p>
-</blockquote>
-<blockquote>
-<p>犯罪不是疾病，而是症状。警察就像给脑瘤患者开阿司匹林的医生，除了警察更喜欢用警棍给人治病。我们是博大、粗鲁、富裕、狂野的一群人，犯罪是我们为之付出的代价，有组织犯罪是我们为组织付出的代价。犯罪会陪伴我们很长时间。有组织犯罪仅仅是万能金钱的肮脏一面。”</p>
-</blockquote>
-<blockquote>
-<p>一个州政府，只要它从赌博业提钱并称之为收税，这个政府就在帮黑帮拉业务。理发师或美容店小妹押下两块钱。这些钱到了辛迪加手里，真正产生利润的就是这些钱。民众想要一支正派的警务力量，对吧？为什么？保护持有优待卡的人？咱们州有合法的赛马场，一年营业三百六十五天。他们规规矩矩经营，政府拿到分红，但大家在赛马场每押一块钱，就会在场外簿记那儿押五十块。一张赛马券上有八九场比赛，其中一半是没人注意的冷门比赛，只要有人点头，随时都能安排胜负。骑师想赢比赛只有一种方法，但想输掉就有二十种，虽然每八根桩子就有一个管理员盯着，但只要骑师懂行，他们就一点办法也他妈没有。这是合法赌博，哥们儿，干干净净规规矩矩的生意，经过州政府的批准。所以这就是正当的了对吧？不，在我看来根本不对。因为这就是赌博，赌博滋生赌徒，各方各面全考虑进来，世上只存在一种赌博：不正当的那种。”</p>
-</blockquote>
-<blockquote>
-<p>谁是真有罪的，让斧钺加在他的头上吧。” 中午时分，</p>
-</blockquote>
-<blockquote>
-<p>必须将悔恨的芸香佩戴得与众不同”</p>
-</blockquote>
-<blockquote>
-<p>生命的悲剧，霍华德，不在于美丽的事物过早衰亡，而在于它们变得苍老和鄙俗。</p>
-</blockquote>
-<blockquote>
-<p>了。先死的是永远是善良温柔的好人。” 他没说话。</p>
-</blockquote>
-<blockquote>
-<p>金钱有个特别之处，”他继续道，“数量大了，它就会拥有自己的生命，甚至自己的道德准则。金钱的力量会变得难以控制。人类向来是贪婪的动物。人口的增长，战争的海量消耗，抢夺性重税的无止境压力——这些东西让人类变得越来越贪婪。普通人活得疲惫而惶恐，一个疲惫而惶恐的人负担不了理想。他必须养家糊口。我们这个时代见识了公德和私德的令人震惊的退步。人们的生活遭受品质缺乏的戕害，你不可能期待他们拥有品质。大规模生产没有品质可言。你不希望货物的品质太好，因为品质好就会太耐用。于是你用式样替代品质，这是一种商业欺诈，旨在人工营造过时的感觉。大规模生产必须让今年的货物到明年看上去不够时髦，否则明年的货物就卖不出去了。我们拥有全世界最洁白的厨房和最闪亮的卫生间。然而可爱的洁白厨房没法让普通的美国家庭主妇做出能下嘴的食物，而可爱的闪亮卫生间基本上只是个容器，用来存放除臭剂、通便药、安眠药和所谓化妆品业这个欺诈行当生产的各色产品。我们制造全世界最精美的包装，马洛先生，里面的东西以垃圾为主。”</p>
-</blockquote>
-<blockquote>
-<p>我们生活在所谓的民主社会，多数人统治少数人。一个美好的理念，要是行得通就更好了。人们选举，但提名候选人的是党派机器，党派机器的有效运转依赖于花费大量金钱。钱必须有某人出，这个某人无论是个人还是财团、商会或其他组织，都会期待一定的回报。我和我这种人期待的是允许我们享受体面的隐私生活。我拥有几家报纸，但我不喜欢它们，在我看来，它们永远在威胁我们所剩无几的隐私。它们总在叫嚣的新闻自由，除了极少数可敬的例外，只是兜售丑闻、犯罪、性爱、感官刺激、仇恨和含沙射影的自由，只是政治和金钱利用宣传工具的自由。</p>
-</blockquote>
-<blockquote>
-<p>你想和她睡觉。大家都想。你想分享她的美梦，闻一闻她的记忆玫瑰。我说不定也想。但没什么可分享的，老弟——没有，没有，什么都没有。黑暗中孤零零的只有你一个人。”</p>
-</blockquote>
-<blockquote>
-<p>“情况越来越糟糕，但我一直是个泡在酒瓶里的硬汉子。年轻时遇到困难，你经得住许多折腾。年近四十，你就没法像以前那样恢复过来了。”</p>
-</blockquote>
-<blockquote>
-<p>“青柠汁。非常英国，</p>
-</blockquote>
-<blockquote>
-<p>“你非要演大戏，”他冷冷地说，“维护你的权利，引用法律。马洛，一个人究竟能天真到什么程度？你这样的人应该知道该走什么路。法律不等于正义。法律是一种非常不完善的机制。你恰好按对了正确的按<br>
-钮，而且运气特别好，跳出来的答案会是正义。法律的意图也仅仅是提供一种机制。我看你没心情接受我的帮助。那么我就告辞了。要是你改变主意，请和我联系。”</p>
-</blockquote>
-<h2 id="送你一颗子弹-刘瑜"><a class="markdownIt-Anchor" href="#送你一颗子弹-刘瑜"></a> 送你一颗子弹 (刘瑜)</h2>
-<blockquote>
-<p>年轻气壮的时候，总觉得一个人因为脆弱而结婚是多么可耻的事情，现在看来这也没什么。人人都追求幸福，但是很多人的当务之急不是追求幸福，而是精神自救、不发疯、不崩溃、不像大街上的那个疯子一样高举圣经在车水马龙中高嚷“哈里路亚”。</p>
-</blockquote>
-<blockquote>
-<p>我说同学，到我家楼下那又没有卖冬瓜和卤猪耳朵的超市，这事有什么可激动的？！</p>
-</blockquote>
-<blockquote>
-<p>想到了生活就是一个手段不断淹没目的的过程，</p>
-</blockquote>
-<blockquote>
-<p>想到了生活就是一个手段不断淹没目的的</p>
-</blockquote>
-<p>心疼</p>
-<blockquote>
-<p>去年冬天，跟朋友去参加一个婚礼。人家邀请函上说穿着要求是casual chic，我就真的信了，穿了一件很casual其实也不太chic的毛衣就去了。冬天嘛，穿个毛衣保暖啊。结果，婚礼在一个金碧辉煌的歌剧院里举行，满场都是长裙飘翼、金光闪闪、艳若桃花的美女飘来飘去，唯独一个家里有23条连衣裙的女人，扎着个马尾辫，穿着个厚毛衣，羞愧难当地站在角落里喝可乐。其实如果我当时不是站在那喝可乐，而是蹲在那啃烧饼，那形象才真叫完整了</p>
-</blockquote>
-<blockquote>
-<p>一个男人的细腻必须通过这些得到解释吗？敏感就不能够是一种健康的力量？这些陈腐的逻辑真叫人扫兴，仿佛一切艺术上的想象力，表达的最终都是对自我的厌恶</p>
-</blockquote>
-<blockquote>
-<p>一个男人的细腻必须通过这些得到解释吗？敏感就不能够是一种健康的力量？这些陈腐的逻辑真叫人扫兴，仿佛一切艺术上的想象力，表达的最终都是对自我的厌恶。 乱 “你知道学院里我最喜欢的风景是哪一块吗？</p>
-</blockquote>
-<blockquote>
-<p>什么尤利西斯、普鲁斯特、卡夫卡之类的“大师”，我根本读不下去，也不想作若有所悟状。</p>
-</blockquote>
-<blockquote>
-<p>当然我没有做出这件事。虽然我们和疯狂永远只相隔嚷出“薄荷”的那一秒，但，它是多么坚固的一秒啊，简直就是动物园里隔绝狮子和人类的那道铁丝网。在这个陌生城市的黄昏，这道铁丝网成功阻止了我去抢<br>
-夺一个陌生老太太的帅猫。我的疯狂依然茂盛，但是它屏住呼吸、向内生长，尚属“非正式疯狂”。</p>
-</blockquote>
-<blockquote>
-<p>生活多么美好，万事俱备，只欠一个老公两个儿子一条狗。</p>
-</blockquote>
-<blockquote>
-<p>你要跟我说结婚的好处是感情有所寄托生活上相互扶持可以生养孩子，我都不为所动，但是你要跟说结婚的好处是半夜看恐怖小说不用害怕，我就会觉得，是啊，很有道理啊，结了婚的人真赚。</p>
-</blockquote>
-<blockquote>
-<p>你要跟我说结婚的好处是感情有所寄托生活上相互扶持可以生养孩子，我都不为所动，但是你要跟说结婚的好处是半夜看恐怖小说不用害怕，我就会觉得，是啊，很有道理啊，结了婚的人真赚。</p>
-</blockquote>
-<blockquote>
-<p>群众的痛骂。其实读者不明白，写一个小说就像经营一场婚姻，开始是靠爱情，后来是靠毅力。有些人不堪忍受没有爱情的婚姻，于是趁早离了婚。</p>
-</blockquote>
-<blockquote>
-<p>以前跟朋友聊天，她告诉我，当她早上起不来的时候，一想到起来之后可以吃什么什么，就心花怒放地蹦了起来。我说</p>
-</blockquote>
-<blockquote>
-<p>以前跟朋友聊天，她告诉我，当她早上起不来的时候，一想到起来之后可以吃什么什么，就心花</p>
-</blockquote>
-<blockquote>
-<p>其实没有机会也可以创造机会的，但是创造机会，多么辛苦啊，要翻山越岭吧，要四渡赤水吧，哪像眼前这铺好的高速公路，可以畅通无阻地开下去。</p>
-</blockquote>
-<blockquote>
-<p>如果说两年前我是哈贝马斯“沟通理性”、“协商民主”的信徒，今天的我，由于这个厨房经历，更接近了“新保守主义”式的强力捍卫自由民主的信念。如果说两年前，我对“制度主义”有一种迷信，由于这个厨房<br>
-经历，今天的我，对文化如何影响制度的实施、降低制度的成本，有了更深的认识。如果说两年前的我会随随便便轻轻松松把一个政治家说成恶棍白痴，今天的我，可能对他们抱有更多的同情和尊重。如果说两年前的我更倾向问的问题是，为什么拉美，非洲，甚至亚洲一些国家的宪政试验会一而再、再而三地失败？今天的我，会反过来问：为什么宪政会在欧美国家成功？因为现在我更多地意识到，民主宪政的失败几乎是“必然”的，而成功才是“偶然”的。</p>
-</blockquote>
-<blockquote>
-<p>、穷人对富人的谄媚之意。如果我有福柯那样上纲上线的本领，没准还能从“美金”一这个词中分析出当今世界的国际阶级斗争局势。</p>
-</blockquote>
-<blockquote>
-<p>人是一切社会关系的总和，兰德却说，人是把一切社会关系的总和给揉成一团，再扔到垃圾桶里去的骄傲而已。</p>
-</blockquote>
-<blockquote>
-<p>常是会负有心人的；功夫负不负有心人本该没有那么重要的；“有心”的价值是不能用负与不负来衡量的。</p>
-</blockquote>
-<blockquote>
-<p>如果对个体意志的赞叹并不依赖于它是否引向“成功”，那么兰德分配给Howard的最后成功命运就是个多余的情节。</p>
-</blockquote>
-<blockquote>
-<p>漂浮着他人眼光的世界是多么的油腻啊，我所说的冰岛，就是指清净且清澈的生活而已</p>
-</blockquote>
-<blockquote>
-<p>有时候我只想说“fuck you&quot;，并不想详细说明为什么要fuck you，用什么姿势fuck you以及fuck you的历史意义。最后，从情绪上而言，我不能再随便暴露自己狂躁、抑郁的一面。在两千双眼睛面前凄凄惨惨切切，实在令人害臊。再真诚的忧郁或者狂躁，也因为这两千双眼睛，变成了</p>
-</blockquote>
-<blockquote>
-<p>梦想多么妖冶，多么锋利，</p>
-</blockquote>
-<blockquote>
-<p>的每一种身份都是一种自我绑架，</p>
-</blockquote>
-<h2 id="黄金时代-王小波全集作家出版社典藏版本-王小波"><a class="markdownIt-Anchor" href="#黄金时代-王小波全集作家出版社典藏版本-王小波"></a> 黄金时代-王小波全集(作家出版社典藏版本) (王小波)</h2>
-<blockquote>
-<p>人活在世上，就是为了忍受摧残，一直到死。想明了这一点，一切都能泰然处之。</p>
-</blockquote>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/02/22/notes/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1387,99 +1281,6 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
   </article>
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2016/03/10/2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gl L">
-      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Glenn's Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2016/03/10/2/" class="post-title-link" itemprop="url">兔子繁殖</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2016-03-10 11:24:20" itemprop="dateCreated datePublished" datetime="2016-03-10T11:24:20+08:00">2016-03-10</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目：</h1>
-<p>有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？</p>
-<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h2>
-<figure class="highlight python"><figcaption><span>Python</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">month = <span class="number">1</span></span><br><span class="line">rabbits = <span class="number">2</span></span><br><span class="line">rabbits_one = <span class="number">0</span></span><br><span class="line">rabbits_two = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>  month &lt; <span class="number">100</span>:</span><br><span class="line">    <span class="keyword">if</span> month &lt; <span class="number">3</span>:</span><br><span class="line">        month += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        rabbits = rabbits + rabbits_two</span><br><span class="line">        rabbits_two = rabbits_one</span><br><span class="line">        rabbits_one =  rabbits</span><br><span class="line">        month += <span class="number">1</span></span><br><span class="line">        dict1 = &#123;&#125;</span><br><span class="line">        sum_rabbits = rabbits + rabbits_two + rabbits_one</span><br><span class="line">        pair_rabbits = int(sum_rabbits / <span class="number">2</span>)</span><br><span class="line">        dict1[<span class="string">'月份是'</span> , month<span class="number">-1</span>] = <span class="string">'兔子只数'</span> , sum_rabbits , <span class="string">'兔子对数是'</span>, pair_rabbits</span><br><span class="line">        print(dict1)</span><br><span class="line">        print(<span class="string">'兔子总数是'</span>,rabbits + rabbits_two + rabbits_one)</span><br><span class="line">print(<span class="string">'兔子对数是'</span>,int((rabbits + rabbits_two + rabbits_one)/<span class="number">2</span>))</span><br><span class="line">print(<span class="string">'结束时'</span>,month<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="小节"><a class="markdownIt-Anchor" href="#小节"></a> 小节：</h2>
-<p>感觉写得代码好糟糕，感觉好长，希望以后可以简化代码</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </section>
 
   
@@ -1520,7 +1321,7 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
