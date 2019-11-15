@@ -58,19 +58,22 @@
   };
 </script>
 
-  <meta name="description" content="题目: 无脑找出三位水仙花数  思路： ”水仙花数”是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个”水仙花数”，因为153=1的三次方＋5的三次方＋3的三次方。直接根据定义遍历99到1000之间的每一个整数，对其进行水仙花数判定。（本来想写一个找出所有n位的水仙花数，结果naive）  代码： 1234567891011121314151617import mathi = 0n">
+  <meta name="description" content="练习使用Matplotlib绘图，Less talk，show me code！">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="三位的水仙花数">
-<meta property="og:url" content="https://wizardqaq.github.io/2016/03/22/5/index.html">
+<meta property="og:title" content="Matplotlib绘图之一">
+<meta property="og:url" content="https://wizardqaq.github.io/2019/11/15/plotting-1/index.html">
 <meta property="og:site_name" content="Glenn&#39;s Blog">
-<meta property="og:description" content="题目: 无脑找出三位水仙花数  思路： ”水仙花数”是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个”水仙花数”，因为153=1的三次方＋5的三次方＋3的三次方。直接根据定义遍历99到1000之间的每一个整数，对其进行水仙花数判定。（本来想写一个找出所有n位的水仙花数，结果naive）  代码： 1234567891011121314151617import mathi = 0n">
+<meta property="og:description" content="练习使用Matplotlib绘图，Less talk，show me code！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-27T15:08:10.394Z">
+<meta property="og:image" content="https://wizardqaq.github.io/2019/11/15/plotting-1/figure1.png">
+<meta property="og:image" content="https://wizardqaq.github.io/2019/11/15/plotting-1/figure2.png">
+<meta property="og:updated_time" content="2019-11-15T06:31:08.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="三位的水仙花数">
-<meta name="twitter:description" content="题目: 无脑找出三位水仙花数  思路： ”水仙花数”是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个”水仙花数”，因为153=1的三次方＋5的三次方＋3的三次方。直接根据定义遍历99到1000之间的每一个整数，对其进行水仙花数判定。（本来想写一个找出所有n位的水仙花数，结果naive）  代码： 1234567891011121314151617import mathi = 0n">
-  <link rel="canonical" href="https://wizardqaq.github.io/2016/03/22/5/">
+<meta name="twitter:title" content="Matplotlib绘图之一">
+<meta name="twitter:description" content="练习使用Matplotlib绘图，Less talk，show me code！">
+<meta name="twitter:image" content="https://wizardqaq.github.io/2019/11/15/plotting-1/figure1.png">
+  <link rel="canonical" href="https://wizardqaq.github.io/2019/11/15/plotting-1/">
 
 
 <script id="page-configurations">
@@ -84,7 +87,7 @@
   };
 </script>
 
-  <title>三位的水仙花数 | Glenn's Blog</title>
+  <title>Matplotlib绘图之一 | Glenn's Blog</title>
   
 
 
@@ -202,7 +205,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2016/03/22/5/">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/11/15/plotting-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gl L">
@@ -216,7 +219,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">三位的水仙花数
+          <h1 class="post-title" itemprop="name headline">Matplotlib绘图之一
 
             
           </h1>
@@ -233,19 +236,11 @@
                 
               
 
-              <time title="创建时间：2016-03-22 11:54:58" itemprop="dateCreated datePublished" datetime="2016-03-22T11:54:58+08:00">2016-03-22</time>
+              <time title="创建时间：2019-11-15 14:22:11 / 修改时间：14:31:08" itemprop="dateCreated datePublished" datetime="2019-11-15T14:22:11+08:00">2019-11-15</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
-              </span>
             
           
 
@@ -268,17 +263,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目:</h1>
-<p>无脑找出三位水仙花数</p>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
-<p>”水仙花数”是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个”水仙花数”，因为153=1的三次方＋5的三次方＋3的三次方。直接根据定义遍历99到1000之间的每一个整数，对其进行水仙花数判定。（本来想写一个找出所有n位的水仙花数，结果naive）</p>
-<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">n = <span class="number">100</span></span><br><span class="line"><span class="keyword">while</span> n &lt; <span class="number">1000</span>:</span><br><span class="line">    str_num = str(n)</span><br><span class="line">    a = int(str_num[<span class="number">0</span>])</span><br><span class="line">    b = int(str_num[<span class="number">1</span>])</span><br><span class="line">    c = int(str_num[<span class="number">2</span>])</span><br><span class="line">    delta = a**<span class="number">3</span> + b**<span class="number">3</span> + c**<span class="number">3</span></span><br><span class="line">    <span class="keyword">if</span> delta == n:</span><br><span class="line">        print(n,<span class="string">'is a narcissus number'</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment">#print(n,'is not a narcissus number')</span></span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">print(<span class="string">'Less than 1000,there are'</span>,i,<span class="string">'narcissus number'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结：</h2>
-<p>估计是这次题目比较简单所以感觉代码写得没有前面那么糟糕。。。</p>
-<blockquote>
-<p>路漫漫其修远兮，吾将上下而求索</p>
-</blockquote>
+        <p>练习使用Matplotlib绘图，Less talk，show me code！</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line">E_sys = [</span><br><span class="line">     <span class="number">-1092.05847</span>,</span><br><span class="line">     <span class="number">-1093.62491</span>,</span><br><span class="line">     <span class="number">-1093.98593</span>,</span><br><span class="line">     <span class="number">-1093.8398</span>,</span><br><span class="line">     <span class="number">-1093.50705</span></span><br><span class="line">        ]</span><br><span class="line">delta_E = [</span><br><span class="line">     <span class="number">0.25826</span>,</span><br><span class="line">     <span class="number">1.8247</span>,</span><br><span class="line">     <span class="number">2.18572</span>,</span><br><span class="line">     <span class="number">2.03959</span>,</span><br><span class="line">     <span class="number">1.70684</span></span><br><span class="line">     ]</span><br><span class="line">d = [</span><br><span class="line">     <span class="number">1.58</span>,</span><br><span class="line">     <span class="number">1.78</span>,</span><br><span class="line">     <span class="number">1.98</span>,</span><br><span class="line">     <span class="number">2.18</span>,</span><br><span class="line">     <span class="number">2.38</span></span><br><span class="line">     ]</span><br><span class="line">E_single = [</span><br><span class="line">    <span class="number">-1091.80021</span>,</span><br><span class="line">    <span class="number">-1091.80021</span>,</span><br><span class="line">    <span class="number">-1091.80021</span>,</span><br><span class="line">    <span class="number">-1091.80021</span>,</span><br><span class="line">    <span class="number">-1091.80021</span>]</span><br><span class="line">plt.style.use(<span class="string">"bmh"</span>)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">axis1 = fig.add_axes([<span class="number">0.1</span>, <span class="number">0.1</span>, <span class="number">0.8</span>, <span class="number">0.8</span>])</span><br><span class="line">axis1.plot(d, E_sys,marker=<span class="string">'o'</span>, label=<span class="string">'Joint E'</span>)</span><br><span class="line"><span class="comment">#axis2 = axis1.twinx()</span></span><br><span class="line">axis1.plot(d, E_single,marker=<span class="string">'D'</span>, label=<span class="string">'Sperated E'</span>)</span><br><span class="line">plt.vlines(d, E_sys, E_single,linestyles=<span class="string">'dotted'</span>, label=<span class="string">'$\Delta E$'</span>)</span><br><span class="line">axis1.set_xlabel(<span class="string">'d ($\AA$)'</span>)</span><br><span class="line">axis1.set_ylabel(<span class="string">'$E_&#123;system&#125;$ (eV)'</span>)</span><br><span class="line">axis1.legend(loc=<span class="string">'best'</span>)</span><br><span class="line">axis1.annotate(<span class="string">"$\Delta E$"</span>,</span><br><span class="line">            xy=(<span class="number">1.98</span>, <span class="number">-1092.5</span>), xycoords=<span class="string">'data'</span>,</span><br><span class="line">            xytext=(<span class="number">1.86</span>, <span class="number">-1093</span>), textcoords=<span class="string">'data'</span>,</span><br><span class="line">            arrowprops=dict(arrowstyle=<span class="string">"simple"</span>,</span><br><span class="line">                            connectionstyle=<span class="string">"arc3"</span>,</span><br><span class="line">                            facecolor=<span class="string">'black'</span>),)</span><br><span class="line">fig.savefig(<span class="string">'1.png'</span>, dpi=<span class="number">600</span>, bbox_inches = <span class="string">'tight'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="figure1.png" alt="Output"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = Axes3D(fig)</span><br><span class="line">x = np.arange(<span class="number">-2</span>,<span class="number">2</span>,<span class="number">0.1</span>)</span><br><span class="line">y = np.arange(<span class="number">-2</span>,<span class="number">2</span>,<span class="number">0.1</span>)</span><br><span class="line">X, Y = np.meshgrid(x, y)</span><br><span class="line">Z = x * np.exp(-X*X - Y*Y)</span><br><span class="line">ax.plot_surface(X, Y, Z, rstride=<span class="number">1</span>, cstride=<span class="number">1</span>, cmap=<span class="string">'viridis'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="figure2.png" alt="Output"></p>
 
     </div>
 
@@ -317,8 +307,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2016/03/15/4/" rel="next" title="找出一个数的所有质因数">
-                  <i class="fa fa-chevron-left"></i> 找出一个数的所有质因数
+                <a href="/2019/11/11/MC-M/" rel="next" title="MC计算PI---1">
+                  <i class="fa fa-chevron-left"></i> MC计算PI---1
                 </a>
               
             </div>
@@ -326,10 +316,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/02/22/notes/" rel="prev" title="读书摘录(Feb 22th, 2019)">
-                  读书摘录(Feb 22th, 2019) <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -361,17 +347,8 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -468,23 +445,6 @@
 
         </div>
       </div>
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text"> 题目:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">1.1.</span> <span class="nav-text"> 思路：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.2.</span> <span class="nav-text"> 代码：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text"> 小结：</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
     </div>
   </aside>
