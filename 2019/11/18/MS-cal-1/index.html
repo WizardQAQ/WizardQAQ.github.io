@@ -58,22 +58,19 @@
   };
 </script>
 
-  <meta name="description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。  PowerShell的美化 主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa">
-<meta name="keywords" content="Backup">
+  <meta name="description" content="暂时实现功能：  获取指定目标下所有文件，通过正则筛选MS结果文件（.castep) 搜索castep文件，获得体系能量值  待实现功能：  计算目标原子间的面间距 ······  代码见下：">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何“优雅”地使用Windowns">
-<meta property="og:url" content="https://wizardqaq.github.io/2019/06/09/htuwin/index.html">
+<meta property="og:title" content="使用Python处理MS文件计算两相界面的分离功">
+<meta property="og:url" content="https://wizardqaq.github.io/2019/11/18/MS-cal-1/index.html">
 <meta property="og:site_name" content="Glenn&#39;s Blog">
-<meta property="og:description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。  PowerShell的美化 主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa">
+<meta property="og:description" content="暂时实现功能：  获取指定目标下所有文件，通过正则筛选MS结果文件（.castep) 搜索castep文件，获得体系能量值  待实现功能：  计算目标原子间的面间距 ······  代码见下：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wizardqaq.github.io/2019/06/09/htuwin/Fig1.png">
-<meta property="og:image" content="https://wizardqaq.github.io/2019/06/09/htuwin/Fig2.png">
-<meta property="og:updated_time" content="2019-08-27T15:08:10.410Z">
+<meta property="og:updated_time" content="2019-11-18T09:44:19.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何“优雅”地使用Windowns">
-<meta name="twitter:description" content="主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。  PowerShell的美化 主要用到的有，各个模块主要由PS Gallery进行：  posh-git oh-my-posh PSReadLine PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂) PowerLine Font：Sarasa">
-<meta name="twitter:image" content="https://wizardqaq.github.io/2019/06/09/htuwin/Fig1.png">
-  <link rel="canonical" href="https://wizardqaq.github.io/2019/06/09/htuwin/">
+<meta name="twitter:title" content="使用Python处理MS文件计算两相界面的分离功">
+<meta name="twitter:description" content="暂时实现功能：  获取指定目标下所有文件，通过正则筛选MS结果文件（.castep) 搜索castep文件，获得体系能量值  待实现功能：  计算目标原子间的面间距 ······  代码见下：">
+  <link rel="canonical" href="https://wizardqaq.github.io/2019/11/18/MS-cal-1/">
 
 
 <script id="page-configurations">
@@ -87,7 +84,7 @@
   };
 </script>
 
-  <title>如何“优雅”地使用Windowns | Glenn's Blog</title>
+  <title>使用Python处理MS文件计算两相界面的分离功 | Glenn's Blog</title>
   
 
 
@@ -205,7 +202,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/06/09/htuwin/">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/11/18/MS-cal-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gl L">
@@ -219,7 +216,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">如何“优雅”地使用Windowns
+          <h1 class="post-title" itemprop="name headline">使用Python处理MS文件计算两相界面的分离功
 
             
           </h1>
@@ -236,19 +233,11 @@
                 
               
 
-              <time title="创建时间：2019-06-09 16:43:13" itemprop="dateCreated datePublished" datetime="2019-06-09T16:43:13+08:00">2019-06-09</time>
+              <time title="创建时间：2019-11-18 17:35:31 / 修改时间：17:44:19" itemprop="dateCreated datePublished" datetime="2019-11-18T17:35:31+08:00">2019-11-18</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
-              </span>
             
           
 
@@ -271,50 +260,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>主要备份下自己对于win10系统的设置，PowerShell的美化，wsl的使用：写博客和抄代码。</p>
-<h2 id="powershell的美化"><a class="markdownIt-Anchor" href="#powershell的美化"></a> PowerShell的美化</h2>
-<p>主要用到的有，各个模块主要由PS Gallery进行：</p>
+        <p>暂时实现功能：</p>
 <ul>
-<li>posh-git</li>
-<li>oh-my-posh</li>
-<li>PSReadLine</li>
-<li>PS Color (其实好像Dir Color可以直接用linux上的配置文件，但是好像一直没效果😂)</li>
-<li>PowerLine Font：Sarasa Gothic(or: dejavu sans mono nerd font)</li>
-<li>ColorTool (<a href="https://github.com/microsoft/terminal/releases" target="_blank" rel="noopener">release</a> 界面，添加到环境变量)</li>
+<li>获取指定目标下所有文件，通过正则筛选MS结果文件（.castep)</li>
+<li>搜索castep文件，获得体系能量值</li>
 </ul>
+<p>待实现功能：</p>
+<ul>
+<li>计算目标原子间的面间距</li>
+<li>······</li>
+</ul>
+<p>代码见下：</p>
 <a id="more"></a>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="built_in">new-object</span> Net.WebClient).DownloadString(<span class="string">"http://psget.net/GetPsGet.ps1"</span>) | iex <span class="comment">#PS Get</span></span><br><span class="line"><span class="built_in">Get-ExecutionPolicy</span> -List</span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned -Scope CurrentUser</span><br><span class="line"><span class="built_in">Get-ExecutionPolicy</span> -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> posh-git -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> oh-my-posh -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> -Name PSReadLine -AllowPrerelease -Scope CurrentUser</span><br><span class="line"><span class="built_in">Install-Module</span> -Name PSColors -Scope CurrentUser</span><br></pre></td></tr></table></figure>
-<p>首先在Power Shell的快捷方式目标后加上运行参数 <code>-NoLogo</code>来禁止每次打开时的版权声明，然后到 <code>C:\Users\\*\Documents\WindowsPowerShell</code> 下修改配置文件导入模块声明主题。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Import-Module</span> PSColor</span><br><span class="line"><span class="built_in">Import-Module</span> posh-git</span><br><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Honukai</span><br></pre></td></tr></table></figure>
-<p>最终配置好截图如下<br>
-<img src="Fig1.png" alt="Fig1"></p>
-<h2 id="wsl的配置"><a class="markdownIt-Anchor" href="#wsl的配置"></a> WSL的配置</h2>
-<h3 id="wsl的安装"><a class="markdownIt-Anchor" href="#wsl的安装"></a> WSL的安装</h3>
-<p>好像因为用的是教育版Win10，没有Windows商店，没办法直接点点/(ㄒoㄒ)/~~，只能用手动了。首先下载Ubuntu 18.04的<a href="https://aka.ms/wsl-ubuntu-1804" target="_blank" rel="noopener">映像</a>。然后在Downloads文件夹执行以下命令，然后就可以在开始菜单找到Ubuntu App了，点击进行部署。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Add-AppxPackage CanonicalGroupLimited.Ubuntu18.<span class="number">04</span>onWindows_1804.<span class="number">2018.817</span>.<span class="number">0</span>_x64__79rhkp1fndgsc.Appx</span><br></pre></td></tr></table></figure>
-<h3 id="ubuntu-配置"><a class="markdownIt-Anchor" href="#ubuntu-配置"></a> Ubuntu 配置</h3>
-<p>没什么好备份的，就是设置账号密码，配置hexo和anaconda环境</p>
-<h3 id="zsh-配置"><a class="markdownIt-Anchor" href="#zsh-配置"></a> ZSH 配置</h3>
-<p>用上就会爱上o(<em>////▽////</em>)。主要有：</p>
-<ul>
-<li>ZSH</li>
-<li>Oh-My-ZSH
-<ul>
-<li>zsh-syntax-highlighting</li>
-<li>zsh-autosuggestions</li>
-<li>cp</li>
-<li>extract</li>
-<li>web-search</li>
-<li>colored-man-pages</li>
-<li>autojump</li>
-</ul>
-</li>
-<li>tldr</li>
-</ul>
-<p>.zshrc文件内容如下：</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ZSH=<span class="string">"/home/gll/.oh-my-zsh"</span></span><br><span class="line">ZSH_THEME=<span class="string">"ys"</span></span><br><span class="line"></span><br><span class="line">plugins=(git</span><br><span class="line">         zsh-syntax-highlighting</span><br><span class="line">         zsh-autosuggestions</span><br><span class="line">         cp </span><br><span class="line">         extract</span><br><span class="line">         web-search</span><br><span class="line">         colored-man-pages</span><br><span class="line">         autojump</span><br><span class="line">        )</span><br><span class="line">. /usr/share/autojump/autojump.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> zshconfig=<span class="string">"mate ~/.zshrc"</span></span><br><span class="line"><span class="built_in">alias</span> ohmyzsh=<span class="string">"mate ~/.oh-my-zsh"</span></span><br><span class="line"><span class="built_in">alias</span> chrome=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> endnote=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/EndNote X9/EndNote.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> netease=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Netease/CloudMusic/cloudmusic.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> steam=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Steam/Steam.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> wechat=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Tencent/WeChat/WeChat.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> uplay=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Ubisoft/Ubisoft\ Game\ Launcher/Uplay.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> vsc=<span class="string">"/mnt/c/Program\ Files/Microsoft\ VS\ Code/Code.exe"</span></span><br><span class="line"><span class="built_in">alias</span> origin=<span class="string">"/mnt/c/Program\ Files/OriginLab/Origin2018/Origin95_64.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> tim=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Tencent/TIM/Bin/QQScLauncher.exe &amp;"</span></span><br><span class="line"><span class="built_in">alias</span> dls=<span class="string">"/mnt/c/Users/lgl96/Downloads"</span></span><br><span class="line"><span class="built_in">alias</span> pdf=<span class="string">"/mnt/c/Program\ Files\ \(x86\)/Adobe/Acrobat\ DC/Acrobat/Acrobat.exe &amp;"</span></span><br></pre></td></tr></table></figure>
-<p><img src="Fig2.png" alt="Fig2"></p>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> funcs</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line">trans = math.pi / <span class="number">180</span></span><br><span class="line"></span><br><span class="line">dirs = <span class="string">'/home/gll/Python/MS/1'</span></span><br><span class="line">all_files = funcs.get_castep_files(dirs)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> all_files:</span><br><span class="line">    print(i, sep=<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line">E_Al = funcs.get_NB_E(all_files[<span class="number">0</span>])</span><br><span class="line">E_TiB = funcs.get_NB_E(all_files[<span class="number">2</span>])</span><br><span class="line">E_total = funcs.get_NB_E(all_files[<span class="number">1</span>])</span><br><span class="line">E_TiB.append(<span class="number">-14208.29353654</span>)</span><br><span class="line">print(E_Al,</span><br><span class="line">    E_TiB,</span><br><span class="line">    E_total,</span><br><span class="line">    sep=<span class="string">'\n\n\n'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = E_TiB[<span class="number">0</span>] + E_Al[<span class="number">0</span>] - E_total[<span class="number">-1</span>]</span><br><span class="line">s = <span class="number">6.100223</span> * <span class="number">6.100224</span> * <span class="number">120.87238</span> * trans</span><br><span class="line"></span><br><span class="line">SE = a / (<span class="number">2</span> * s)</span><br><span class="line">print(<span class="string">'Al的(111)晶面同TiB2的(0001)的分离功为&#123;&#125;eV'</span>.format(SE))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_castep_files</span><span class="params">(dirs, pattern_castep=<span class="string">r'\.castep$'</span>)</span>:</span></span><br><span class="line">    gen_dirs = os.walk(dirs)</span><br><span class="line">    all_files = []</span><br><span class="line">    castep_files = []</span><br><span class="line">    pattern = re.compile(pattern_castep)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> a, b, c <span class="keyword">in</span> gen_dirs:</span><br><span class="line">        <span class="keyword">for</span> name <span class="keyword">in</span> c:</span><br><span class="line">            all_files.append(str(os.path.join(a, name)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_files:</span><br><span class="line">        temp = pattern.findall(d)</span><br><span class="line">        <span class="keyword">if</span> temp:</span><br><span class="line">            castep_files.append(d)</span><br><span class="line">    <span class="keyword">return</span> castep_files</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_NB_E</span><span class="params">(data_file)</span>:</span></span><br><span class="line">    E_lines = []</span><br><span class="line">    NB_E = []</span><br><span class="line">    pattern = re.compile(<span class="string">r'-\d+\.?\d*'</span>)</span><br><span class="line">    <span class="keyword">with</span> open(data_file, mode=<span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = f.readlines()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> lines:</span><br><span class="line">            a = re.findall(<span class="string">'NB est. 0K energy'</span>, i)</span><br><span class="line">            <span class="keyword">if</span> a:</span><br><span class="line">                E_lines.append(pattern.findall(i))</span><br><span class="line">    </span><br><span class="line">    nums_E = len(E_lines)</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; nums_E:</span><br><span class="line">        NB_E.append(float(E_lines[i][<span class="number">1</span>]))</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> NB_E</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -329,7 +288,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/Backup/" rel="tag"># Backup</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
             
           </div>
         
@@ -352,8 +311,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/06/02/Cooling-Curve-Processing/" rel="next" title="冷却曲线处理">
-                  <i class="fa fa-chevron-left"></i> 冷却曲线处理
+                <a href="/2019/11/15/plotting-1/" rel="next" title="Matplotlib绘图之一">
+                  <i class="fa fa-chevron-left"></i> Matplotlib绘图之一
                 </a>
               
             </div>
@@ -361,10 +320,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/07/07/99/" rel="prev" title="99">
-                  99 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -396,17 +351,8 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -503,23 +449,6 @@
 
         </div>
       </div>
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#powershell的美化"><span class="nav-number">1.</span> <span class="nav-text"> PowerShell的美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wsl的配置"><span class="nav-number">2.</span> <span class="nav-text"> WSL的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wsl的安装"><span class="nav-number">2.1.</span> <span class="nav-text"> WSL的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu-配置"><span class="nav-number">2.2.</span> <span class="nav-text"> Ubuntu 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh-配置"><span class="nav-number">2.3.</span> <span class="nav-text"> ZSH 配置</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
     </div>
   </aside>
