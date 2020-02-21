@@ -1,62 +1,24 @@
 <!DOCTYPE html>
-
-
-
-
-
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-    
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css">
-
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.3.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    save_scroll: false,
-    copycode: {"enable":false,"show_result":false,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    }
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wizardqaq.github.io","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
 <meta property="og:type" content="website">
@@ -68,7 +30,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Glenn&#39;s Blog">
 <meta name="twitter:description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
-  <link rel="canonical" href="https://wizardqaq.github.io/page/3/">
+
+<link rel="canonical" href="https://wizardqaq.github.io/page/3/">
 
 
 <script id="page-configurations">
@@ -76,9 +39,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome: true,
-    isPost: false,
-    isPage: false,
-    isArchive: false
+    isPost: false
   };
 </script>
 
@@ -90,11 +51,8 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -103,9 +61,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -119,16 +76,15 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  <div class="container sidebar-position-left">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Glenn's Blog</span>
@@ -136,15 +92,14 @@
       </a>
     </div>
         <p class="site-subtitle">The life style of my own</p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -152,26 +107,14 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
@@ -181,43 +124,42 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+
+          <div class="content">
             
 
-          <div id="content" class="content page-home">
-            
-  <section id="posts" class="posts-expand">
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2016/03/15/4/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2019/02/22/notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Gl L">
       <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Glenn's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2016/03/15/4/" class="post-title-link" itemprop="url">找出一个数的所有质因数</a>
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/02/22/notes/" class="post-title-link" itemprop="url">读书摘录(Feb 22th, 2019)</a>
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -226,25 +168,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2016-03-15 11:50:16" itemprop="dateCreated datePublished" datetime="2016-03-15T11:50:16+08:00">2016-03-15</time>
+              <time title="创建时间：2019-02-22 18:47:07" itemprop="dateCreated datePublished" datetime="2019-02-22T18:47:07+08:00">2019-02-22</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+                <time title="修改时间：2019-11-11 17:59:46" itemprop="dateModified" datetime="2019-11-11T17:59:46+08:00">2019-11-11</time>
               </span>
-            
-          
 
           
 
@@ -257,17 +189,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目：</h1>
-<p>找出一个正整数的所有质因数。</p>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
-<p>感觉题目好简单，但是想了好长时间。先是对除数和商都进行分解，后来发现可以使用质数来当除数，即只需要迭代被除数，不断地把商的值赋值给被除数直至被除数自身是个质数。此时跳出循环，并把最后一个商的值添加到除数的list里，最后直接Print这个list</p>
-<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math                          <span class="comment">#计算平方根</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(num)</span>:</span>                          <span class="comment">#定义分解函数</span></span><br><span class="line">    y = []                           <span class="comment">#储存因数</span></span><br><span class="line">    i =<span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; math.sqrt(num) + <span class="number">1</span>:    <span class="comment">#判断num是否还有质因数</span></span><br><span class="line">        <span class="keyword">if</span> num % i == <span class="number">0</span>:             <span class="comment">#判断i是否为num的质因数</span></span><br><span class="line">            y.append(i)              <span class="comment">#i是num的质因数，并把i添加到y中</span></span><br><span class="line">            num //= i                <span class="comment">#重新给num赋值</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            i += <span class="number">1</span>                   <span class="comment">#i+1，继续加一寻找num的质因数</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        y.append(num)                <span class="comment">#把最后的商加到y中</span></span><br><span class="line">    y.sort()</span><br><span class="line">    print(y)</span><br><span class="line">num = int(input())</span><br><span class="line">f(num)                               <span class="comment">#这次我竟然破天荒的写注释了</span></span><br></pre></td></tr></table></figure>
-<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结：</h2>
-<p>风吹雨打，日夜无阻，心之所向，剑之所指。（这句话好逗啊。。。。</p>
-
-          
+          <h1 id="读书摘录"><a class="markdownIt-Anchor" href="#读书摘录"></a> 读书摘录</h1>
+<p>在kindle上进行标注，然后使用KindleMate进行转换，在使用Markdown排下。记录一下自己认为有意思的句子。</p>
+<h2 id="flipped-怦然心动中英双语典藏版-文德琳范德拉"><a class="markdownIt-Anchor" href="#flipped-怦然心动中英双语典藏版-文德琳范德拉"></a> FLIPPED 怦然心动（中英双语典藏版） (文德琳·范·德拉)</h2>
+<p>突然之间有了铠甲，软肋（这句原来在知乎上看到~</p>
+<blockquote>
+<p>-“Can you climb that high?” he called up to me.<br>
+-“Sure!” I called back. And up, up, up I went!</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/02/22/notes/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
       
     </div>
@@ -276,43 +212,33 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2016/03/11/3/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2016/03/22/5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Gl L">
       <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Glenn's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2016/03/11/3/" class="post-title-link" itemprop="url">素数</a>
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/03/22/5/" class="post-title-link" itemprop="url">三位的水仙花数</a>
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -321,16 +247,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2016-03-11 11:31:26" itemprop="dateCreated datePublished" datetime="2016-03-11T11:31:26+08:00">2016-03-11</time>
+              <time title="创建时间：2016-03-22 11:54:58" itemprop="dateCreated datePublished" datetime="2016-03-22T11:54:58+08:00">2016-03-22</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -338,8 +256,6 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
               </span>
-            
-          
 
           
 
@@ -352,8 +268,154 @@
     <div class="post-body" itemprop="articleBody">
 
       
+          <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目:</h1>
+<p>无脑找出三位水仙花数</p>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
+<p>”水仙花数”是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个”水仙花数”，因为153=1的三次方＋5的三次方＋3的三次方。直接根据定义遍历99到1000之间的每一个整数，对其进行水仙花数判定。（本来想写一个找出所有n位的水仙花数，结果naive）</p>
+<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">n = <span class="number">100</span></span><br><span class="line"><span class="keyword">while</span> n &lt; <span class="number">1000</span>:</span><br><span class="line">    str_num = str(n)</span><br><span class="line">    a = int(str_num[<span class="number">0</span>])</span><br><span class="line">    b = int(str_num[<span class="number">1</span>])</span><br><span class="line">    c = int(str_num[<span class="number">2</span>])</span><br><span class="line">    delta = a**<span class="number">3</span> + b**<span class="number">3</span> + c**<span class="number">3</span></span><br><span class="line">    <span class="keyword">if</span> delta == n:</span><br><span class="line">        print(n,<span class="string">'is a narcissus number'</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment">#print(n,'is not a narcissus number')</span></span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">print(<span class="string">'Less than 1000,there are'</span>,i,<span class="string">'narcissus number'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结：</h2>
+<p>估计是这次题目比较简单所以感觉代码写得没有前面那么糟糕。。。</p>
+<blockquote>
+<p>路漫漫其修远兮，吾将上下而求索</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2016/03/15/4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Gl L">
+      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Glenn's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
           
-            <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目：</h1>
+            <a href="/2016/03/15/4/" class="post-title-link" itemprop="url">找出一个数的所有质因数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-03-15 11:50:16" itemprop="dateCreated datePublished" datetime="2016-03-15T11:50:16+08:00">2016-03-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目：</h1>
+<p>找出一个正整数的所有质因数。</p>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
+<p>感觉题目好简单，但是想了好长时间。先是对除数和商都进行分解，后来发现可以使用质数来当除数，即只需要迭代被除数，不断地把商的值赋值给被除数直至被除数自身是个质数。此时跳出循环，并把最后一个商的值添加到除数的list里，最后直接Print这个list</p>
+<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math                          <span class="comment">#计算平方根</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(num)</span>:</span>                          <span class="comment">#定义分解函数</span></span><br><span class="line">    y = []                           <span class="comment">#储存因数</span></span><br><span class="line">    i =<span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; math.sqrt(num) + <span class="number">1</span>:    <span class="comment">#判断num是否还有质因数</span></span><br><span class="line">        <span class="keyword">if</span> num % i == <span class="number">0</span>:             <span class="comment">#判断i是否为num的质因数</span></span><br><span class="line">            y.append(i)              <span class="comment">#i是num的质因数，并把i添加到y中</span></span><br><span class="line">            num //= i                <span class="comment">#重新给num赋值</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            i += <span class="number">1</span>                   <span class="comment">#i+1，继续加一寻找num的质因数</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        y.append(num)                <span class="comment">#把最后的商加到y中</span></span><br><span class="line">    y.sort()</span><br><span class="line">    print(y)</span><br><span class="line">num = int(input())</span><br><span class="line">f(num)                               <span class="comment">#这次我竟然破天荒的写注释了</span></span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结：</h2>
+<p>风吹雨打，日夜无阻，心之所向，剑之所指。（这句话好逗啊。。。。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2016/03/11/3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Gl L">
+      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Glenn's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/03/11/3/" class="post-title-link" itemprop="url">素数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-03-11 11:31:26" itemprop="dateCreated datePublished" datetime="2016-03-11T11:31:26+08:00">2016-03-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目：</h1>
 <p>输入一个数字，找出这个数字在内的所有素数</p>
 <h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
 <p>首先根据Wiki，<a href="https://zh.wikipedia.org/wiki/%E7%B4%A0%E6%95%B0" target="_blank" rel="noopener">素数</a>指</p>
@@ -374,8 +436,6 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 <h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结:</h2>
 <p>依然感觉写的很烂，感觉还可以写的更好更简单，漫漫长路（心塞</p>
 
-          
-        
       
     </div>
 
@@ -383,43 +443,33 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2016/03/10/2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Gl L">
       <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Glenn's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2016/03/10/2/" class="post-title-link" itemprop="url">兔子繁殖</a>
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/03/10/2/" class="post-title-link" itemprop="url">兔子繁殖</a>
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -428,16 +478,8 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-03-10 11:24:20" itemprop="dateCreated datePublished" datetime="2016-03-10T11:24:20+08:00">2016-03-10</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -445,8 +487,6 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
               </span>
-            
-          
 
           
 
@@ -459,16 +499,13 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目：</h1>
+          <h1 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目：</h1>
 <p>有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？</p>
 <h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h2>
 <figure class="highlight python"><figcaption><span>Python</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">month = <span class="number">1</span></span><br><span class="line">rabbits = <span class="number">2</span></span><br><span class="line">rabbits_one = <span class="number">0</span></span><br><span class="line">rabbits_two = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>  month &lt; <span class="number">100</span>:</span><br><span class="line">    <span class="keyword">if</span> month &lt; <span class="number">3</span>:</span><br><span class="line">        month += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        rabbits = rabbits + rabbits_two</span><br><span class="line">        rabbits_two = rabbits_one</span><br><span class="line">        rabbits_one =  rabbits</span><br><span class="line">        month += <span class="number">1</span></span><br><span class="line">        dict1 = &#123;&#125;</span><br><span class="line">        sum_rabbits = rabbits + rabbits_two + rabbits_one</span><br><span class="line">        pair_rabbits = int(sum_rabbits / <span class="number">2</span>)</span><br><span class="line">        dict1[<span class="string">'月份是'</span> , month<span class="number">-1</span>] = <span class="string">'兔子只数'</span> , sum_rabbits , <span class="string">'兔子对数是'</span>, pair_rabbits</span><br><span class="line">        print(dict1)</span><br><span class="line">        print(<span class="string">'兔子总数是'</span>,rabbits + rabbits_two + rabbits_one)</span><br><span class="line">print(<span class="string">'兔子对数是'</span>,int((rabbits + rabbits_two + rabbits_one)/<span class="number">2</span>))</span><br><span class="line">print(<span class="string">'结束时'</span>,month<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="小节"><a class="markdownIt-Anchor" href="#小节"></a> 小节：</h2>
 <p>感觉写得代码好糟糕，感觉好长，希望以后可以简化代码</p>
 
-          
-        
       
     </div>
 
@@ -476,43 +513,33 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://wizardqaq.github.io/2015/12/31/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Gl L">
       <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Glenn's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2015/12/31/1/" class="post-title-link" itemprop="url">你好-2015</a>
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/12/31/1/" class="post-title-link" itemprop="url">你好-2015</a>
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -521,16 +548,8 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2015-12-31 00:00:50" itemprop="dateCreated datePublished" datetime="2015-12-31T00:00:50+08:00">2015-12-31</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -538,8 +557,6 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-08-27 23:08:10" itemprop="dateModified" datetime="2019-08-27T23:08:10+08:00">2019-08-27</time>
               </span>
-            
-          
 
           
 
@@ -552,15 +569,12 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <p>本来打算用这个BLOG，建成一个知识管理的的档案库，结果就这样迅速地失败了。我想主要原因是由于公式，图标，导图的制作太费时间（我也希望自己以后能够提高输入效率，毕竟电脑下排版真的很好看，很整洁，但是也很考验我的能力，自己这一年仍有许多想做的事没有做成，有的是由于自己的惰性，有的还是因为自己的惰性QAQ）</p>
+          <p>本来打算用这个BLOG，建成一个知识管理的的档案库，结果就这样迅速地失败了。我想主要原因是由于公式，图标，导图的制作太费时间（我也希望自己以后能够提高输入效率，毕竟电脑下排版真的很好看，很整洁，但是也很考验我的能力，自己这一年仍有许多想做的事没有做成，有的是由于自己的惰性，有的还是因为自己的惰性QAQ）</p>
 <p>其次原来也想可以同时写点随想，尤其是在意识到上面的困难后，便改变这个BLOG的定位，希望能在空闲时写点东西。但是空荡荡的脑袋，没有半点反应，也许或者就是自己读的书太少，自己的人生还没走多远，自己才刚刚走上这条自己选的道路。</p>
 <p>总而言之，我估计这个BLOG短时间不会更新了，我还真的太年轻，有许多事情需要我去学习。</p>
 <p>不见，2015</p>
 <p><img src="Dream.jpg" alt="Deemo"></p>
 
-          
-        
       
     </div>
 
@@ -568,17 +582,14 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-  </section>
+  </div>
 
   
   <nav class="pagination">
@@ -586,119 +597,97 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
   </nav>
 
 
+
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/images/avatar.gif"
-      alt="Gl L">
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Gl L"
+      src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Gl L</p>
-  <div class="site-description motion-element" itemprop="description">为天地立心，为生民立命，为往圣继绝学，为万世开太平</div>
+  <div class="site-description" itemprop="description">为天地立心，为生民立命，为往圣继绝学，为万世开太平</div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span>
-        
       </div>
-    
   </nav>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/WizardQAQ" title="GitHub &rarr; https://github.com/WizardQAQ" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/WizardQAQ" title="GitHub → https://github.com/WizardQAQ" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="mailto:lgl9693@gmail.com" title="E-Mail &rarr; mailto:lgl9693@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:lgl9693@gmail.com" title="E-Mail → mailto:lgl9693@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://steamcommunity.com/id/lgl9693/" title="steam &rarr; https://steamcommunity.com/id/lgl9693/" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam-square"></i>steam</a>
+        <a href="https://steamcommunity.com/id/lgl9693/" title="steam → https://steamcommunity.com/id/lgl9693/" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam-square"></i>steam</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://www.zhihu.com/people/lgl9693/activities" title="zhihu &rarr; https://www.zhihu.com/people/lgl9693/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-quora"></i>zhihu</a>
+        <a href="https://www.zhihu.com/people/lgl9693/activities" title="zhihu → https://www.zhihu.com/people/lgl9693/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-quora"></i>zhihu</a>
       </span>
-    
   </div>
 
 
 
-        </div>
       </div>
 
     </div>
@@ -709,37 +698,45 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Gl L</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a></div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
     <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
     </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
 </div>
 
 
@@ -749,64 +746,17 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
 
 
-        
       </div>
     </footer>
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-      </div>
-
-    
-  
-  <div id="needsharebutton-float">
-    <span class="btn">
-      <i class="fa fa-share-alt" aria-hidden="true"></i>
-    </span>
-  </div>
-<script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
-<script>
-    pbOptions = {};
-      pbOptions.iconStyle = "box";
-    
-      pbOptions.boxForm = "horizontal";
-    
-      pbOptions.position = "bottomCenter";
-    
-      pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-    
-    new needShareButton('#needsharebutton-postbottom', pbOptions);
-    flOptions = {};
-      flOptions.iconStyle = "box";
-    
-      flOptions.boxForm = "horizontal";
-    
-      flOptions.position = "middleRight";
-    
-      flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-    
-    new needShareButton('#needsharebutton-float', flOptions);
-</script>
-
-
   </div>
 
   
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-<script src="/js/utils.js?v=7.3.0"></script>
-  <script src="/js/motion.js?v=7.3.0"></script>
-
-
-  <script src="/js/affix.js?v=7.3.0"></script>
-  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
-
-
-
-<script src="/js/next-boot.js?v=7.3.0"></script>
-
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -826,26 +776,19 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout: 3000,
+        priority: true,
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://wizardqaq.github.io/page/3/',]
+      });
+      });
+  </script>
 
-  
-
-
-  
 </body>
 </html>
